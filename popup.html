@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>InstaYou</title>
+    <style>
+      body {
+        width: 300px;
+        background-color: black;
+        height: 250px;
+        font-family: Arial, sans-serif;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      h1 {
+        color: white;
+      }
+      p {
+        color: #fafafa;
+      }
+      .buttons {
+        display: flex;
+        margin-top: 20px;
+        justify-items: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 12px 10px 12px 10px;
+        border-radius: 25px;
+        backdrop-filter: blur(10px);
+      }
+      .buttons > button {
+        width: 100%;
+        border: none;
+        background: rgba(255, 255, 255, 0.5);
+        padding: 15px 30px 15px 30px;
+        border-radius: 99px;
+        font-weight: 400;
+        color: rgb(0, 0, 0);
+      }
+      .buttons > button:hover {
+        cursor: pointer;
+      }
+      a:hover {
+        cursor: pointer;
+        z-index: 99;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="logo.png" alt="" style="height: 30px" />
+    <p>Lvl Up The Stalking Game with full Rizzzz</p>
+    <img src="blur.png" alt="" style="position: absolute; z-index: -99" />
+    <div class="buttons">
+      <button id="downloadBtn">Download User Data</button>
+      <button id="compareBtn">Compare User Data</button>
+    </div>
+    <p>
+      Hulululu By
+      <a href="#" style="color: orangered; text-decoration: none"
+        >Ajmal Razaq Bhatti</a
+      >
+    </p>
+    <script src="popup.js"></script>
+  </body>
+</html>
