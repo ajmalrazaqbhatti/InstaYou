@@ -1,3 +1,5 @@
+<img src="https://github.com/user-attachments/assets/47e8ab75-df50-4a26-a376-e584ce8dd8a5" height="60px"/>
+
 # InstaYou 🔥👀
 
 ### Level up your stalking game! Track followers & following changes effortlessly. 😏🚀
