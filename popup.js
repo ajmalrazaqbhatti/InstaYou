@@ -63,7 +63,7 @@ function downloadFollowersHTML() {
 
     // Using the exact class provided by the user for the modal
     const followersModal = document.querySelector(
-      "div.xyi19xy.x1ccrb07.xtf3nb5.x1pc53ja"
+      "div.xyi19xy.x1ccrb07.xtf3nb5.x1pc53ja.x1lliihq.x1iyjqo2.xs83m0k.xz65tgg.x1rife3k.x1n2onr6"
     );
 
     if (!followersModal) {
