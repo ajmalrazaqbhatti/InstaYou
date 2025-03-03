@@ -1,5 +1,5 @@
 # Discontinued:
-The idea was to track followers and following using DOM manipulation, but there’s an issue—when the followers or following modal opens, the numbers aren’t accurate. I couldn’t pinpoint the problem, so I’ve decided to discontinue the project for now.
+The idea was to track followers and following using DOM manipulation, but there’s an issue—when the followers or following modal opens, the numbers aren’t accurate. I couldn’t pinpoint the problem maybe it's on insta end that data is not fetched correctly or shown, so I’ve decided to discontinue the project for now.
 
 
 <img src="https://github.com/user-attachments/assets/47e8ab75-df50-4a26-a376-e584ce8dd8a5" height="60px"/>
