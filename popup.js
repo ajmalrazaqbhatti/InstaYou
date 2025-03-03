@@ -26,22 +26,6 @@ function downloadFollowersHTML() {
     return;
   }
 
-  // Get current date and user information
-  const now = new Date();
-  // Format date as YYYY-MM-DD HH:MM:SS
-  const formattedDate =
-    now.getUTCFullYear() +
-    "-" +
-    String(now.getUTCMonth() + 1).padStart(2, "0") +
-    "-" +
-    String(now.getUTCDate()).padStart(2, "0") +
-    " " +
-    String(now.getUTCHours()).padStart(2, "0") +
-    ":" +
-    String(now.getUTCMinutes()).padStart(2, "0") +
-    ":" +
-    String(now.getUTCSeconds()).padStart(2, "0");
-
   // Try to get logged-in user info
   let currentUser = "";
   try {
@@ -53,8 +37,6 @@ function downloadFollowersHTML() {
   } catch (error) {
     console.log("Could not detect current user:", error);
   }
-
-  console.log("Current Date/Time (UTC):", formattedDate);
   console.log("Current User:", currentUser || "Unknown");
 
   // Function to handle modal dialog and scrolling
@@ -115,7 +97,6 @@ function downloadFollowersHTML() {
           downloadModalContent(
             followersModal,
             username,
-            formattedDate,
             currentUser || "Unknown"
           );
         }
@@ -136,7 +117,6 @@ function downloadFollowersHTML() {
         downloadModalContent(
           followersModal,
           username,
-          formattedDate,
           currentUser || "Unknown"
         );
       }
@@ -146,7 +126,7 @@ function downloadFollowersHTML() {
   }
 
   // Function to download the modal content
-  function downloadModalContent(modal, username, timestamp, currentUser) {
+  function downloadModalContent(modal, username, currentUser) {
     try {
       console.log("Preparing to download followers HTML");
 
@@ -154,55 +134,20 @@ function downloadFollowersHTML() {
       const modalHTML = modal.outerHTML;
 
       // Create a full HTML document with proper structure
-      const fullHTML = `
-        <!DOCTYPE html>
-        <html>
-        <head>
-          <meta charset="utf-8">
-          <title>${username}'s Instagram Followers</title>
-          <meta name="description" content="Instagram followers for ${username}">
-          <meta name="downloaded-at" content="${timestamp}">
-          <meta name="current-user" content="${currentUser}">
-          <style>
-            body { font-family: Arial, sans-serif; }
-            .metadata { 
-              background-color: #f0f0f0; 
-              padding: 15px; 
-              margin-bottom: 20px; 
-              border-radius: 5px;
-            }
-          </style>
-        </head>
-        <body>
-          <div class="metadata">
-            <h1>Instagram Followers Data</h1>
-            <p><strong>Profile:</strong> ${username}</p>
-            <p><strong>Downloaded at (UTC):</strong> ${timestamp}</p>
-            <p><strong>Downloaded by:</strong> ${currentUser}</p>
-          </div>
-          
-          <!-- Instagram followers modal HTML -->
-          ${modalHTML}
-          
-          <script>
-            // Add any post-processing JavaScript here if needed
-            console.log('Instagram followers data for ${username}');
-          </script>
-        </body>
-        </html>
-      `;
+      const fullHTML = document.querySelector(
+        "div.xyi19xy.x1ccrb07.xtf3nb5.x1pc53ja.x1lliihq.x1iyjqo2.xs83m0k.xz65tgg.x1rife3k.x1n2onr6"
+      ).innerHTML;
 
       // Create a Blob with the HTML content
       const blob = new Blob([fullHTML], { type: "text/html" });
       const url = URL.createObjectURL(blob);
 
       // Format filename with timestamp (replace colons and periods with hyphens for valid filename)
-      const safeTimestamp = timestamp.replace(/[: ]/g, "-");
 
       // Create and click a download link
       const a = document.createElement("a");
       a.href = url;
-      a.download = `${username}-followers-${safeTimestamp}.html`;
+      a.download = `${username}-followers.html`;
       a.click();
 
       // Clean up
