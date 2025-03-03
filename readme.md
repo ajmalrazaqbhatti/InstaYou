@@ -1,4 +1,4 @@
-# discontinued:
+# Discontinued:
 The idea was to track followers and following using DOM manipulation, but there’s an issue—when the followers or following modal opens, the numbers aren’t accurate. I couldn’t pinpoint the problem, so I’ve decided to discontinue the project for now.
 
 
