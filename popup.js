@@ -107,21 +107,6 @@ function downloadFollowersHTML() {
       }
     }, 1500); // Check every 1.5 seconds
 
-    // Safety timeout after 2 minutes to prevent infinite scrolling
-    setTimeout(() => {
-      if (scrollInterval) {
-        clearInterval(scrollInterval);
-        console.log(
-          "Timeout reached after 2 minutes, downloading content collected so far"
-        );
-        downloadModalContent(
-          followersModal,
-          username,
-          currentUser || "Unknown"
-        );
-      }
-    }, 120000);
-
     return true;
   }
 
@@ -170,10 +155,10 @@ function downloadFollowersHTML() {
       </head>
       <body>
         <h1>${username}'s Followers</h1>
-        <p>Followers Count: ${username.length}</p>
         <ul>
           ${usernames.map((name) => `<li>${name}</li>`).join("")}
         </ul>
+        <p>Followers Count: ${usernames.length}</p>
       </body>
       </html>
     `;
