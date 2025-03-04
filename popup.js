@@ -125,32 +125,76 @@ function downloadFollowersHTML() {
     return true;
   }
 
-  // Function to download the modal content
   function downloadModalContent(modal, username, currentUser) {
     try {
       console.log("Preparing to download followers HTML");
 
-      // Get the complete HTML content of the modal
-      const modalHTML = modal.outerHTML;
+      // Ensure modal exists
+      if (!modal) {
+        console.error("Modal element not found.");
+        return;
+      }
 
-      // Create a full HTML document with proper structure
-      const fullHTML = document.querySelector(
-        "div.xyi19xy.x1ccrb07.xtf3nb5.x1pc53ja.x1lliihq.x1iyjqo2.xs83m0k.xz65tgg.x1rife3k.x1n2onr6"
-      ).innerHTML;
+      // Select all follower links inside the modal
+      const anchorElements = modal.querySelectorAll("a");
 
-      // Create a Blob with the HTML content
+      // Extract usernames from <span> inside each <a>
+      const usernames = [...anchorElements]
+        .map((anchor) => {
+          const span = anchor.querySelector(
+            "span._ap3a._aaco._aacw._aacx._aad7._aade"
+          );
+          return span ? span.textContent.trim() : null;
+        })
+        .filter(Boolean); // Remove null values
+
+      if (usernames.length === 0) {
+        console.warn("No followers found in the modal.");
+        return;
+      }
+
+      // Create a simple HTML document with extracted usernames
+      const fullHTML = `
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>${username} Followers</title>
+        <style>
+          body { font-family: Arial, sans-serif; padding: 20px; }
+          h1 { color: #333; }
+          ul { list-style: none; padding: 0; }
+          li { margin: 5px 0; font-size: 18px; }
+        </style>
+      </head>
+      <body>
+        <h1>${username}'s Followers</h1>
+        <p>Followers Count: ${username.length}</p>
+        <ul>
+          ${usernames.map((name) => `<li>${name}</li>`).join("")}
+        </ul>
+      </body>
+      </html>
+    `;
+
+      // Create a Blob with the formatted HTML content
       const blob = new Blob([fullHTML], { type: "text/html" });
       const url = URL.createObjectURL(blob);
 
-      // Format filename with timestamp (replace colons and periods with hyphens for valid filename)
+      // Generate a timestamped filename
+      const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
+      const filename = `${username}-followers-${timestamp}.html`;
 
-      // Create and click a download link
+      // Create and trigger the download
       const a = document.createElement("a");
       a.href = url;
-      a.download = `${username}-followers.html`;
+      a.download = filename;
+      document.body.appendChild(a);
       a.click();
+      document.body.removeChild(a);
 
-      // Clean up
+      // Clean up the URL object
       URL.revokeObjectURL(url);
       console.log("Download complete!");
     } catch (error) {
