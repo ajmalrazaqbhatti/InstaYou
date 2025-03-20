@@ -47,16 +47,65 @@
         cursor: pointer;
         z-index: 99;
       }
+      #userList {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: white;
+        width: 100%;
+        max-height: 150px;
+        overflow-y: auto;
+        margin-top: 10px;
+        border-radius: 8px;
+        display: none;
+      }
+      #userList .user-item {
+        padding: 8px 12px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        cursor: pointer;
+      }
+      #userList .user-item:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+      #compareResults {
+        color: white;
+        width: 100%;
+        margin-top: 10px;
+        display: none;
+      }
+      .change-positive {
+        color: #4caf50;
+      }
+      .change-negative {
+        color: #f44336;
+      }
+      .change-neutral {
+        color: #ffc107;
+      }
+      .back-button {
+        background: rgba(255, 255, 255, 0.3);
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 4px;
+        margin-top: 10px;
+        cursor: pointer;
+        display: none;
+      }
     </style>
   </head>
   <body>
     <img src="logo.png" alt="" style="height: 30px" />
-    <p>Lvl Up The Stalking Game with full Rizzzz</p>
+    <p id="mainText">Lvl Up The Stalking Game with full Rizzzz</p>
     <img src="blur.png" alt="" style="position: absolute; z-index: -99" />
-    <div class="buttons">
+    
+    <div id="mainButtons" class="buttons">
       <button id="downloadBtn">Download User Data</button>
       <button id="compareBtn">Compare User Data</button>
     </div>
+    
+    <div id="userList"></div>
+    <div id="compareResults"></div>
+    <button id="backButton" class="back-button">Back</button>
+    
     <p>
       Hulululu By
       <a href="#" style="color: orangered; text-decoration: none"
