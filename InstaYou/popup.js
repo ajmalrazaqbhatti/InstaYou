@@ -459,7 +459,6 @@ chrome.runtime.onMessage.addListener((message) => {
       }
       
       if (!lastEntry) {
-        // No previous data, store initial data
         const initialData = [{
           username: message.username,
           followerCount: message.followerCount,
