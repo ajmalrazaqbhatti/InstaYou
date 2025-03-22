@@ -1,5 +1,3 @@
-# InstaYou - The Ultimate Insta Stalking Tool 👀🔍
-
 <img src="Extension/Public/logo.png" height="80px" alt="InstaYou Logo"/>  
 
 ## Keep Tabs On Your Bestie's Followers & Get The Tea 💅  
