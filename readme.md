@@ -1,12 +1,12 @@
 # InstaYou - The Ultimate Insta Stalking Tool 👀
 
-<img src="Extension/Public/logo.png" height="80px" alt="InstaYou Logo"/>
+<img src="InstaYou/Public/logo.png" height="80px" alt="InstaYou Logo"/>
 
 ## No Cap, Best Way to Track Your Crush's Followers FR FR 🔥
 
 **InstaYou** is a Chrome extension that lets you track who's following (and unfollowing) literally ANYONE on Instagram. Perfect for keeping tabs on your crush, your ex, your bestie who's always losing followers, or that person from math class who suddenly got famous. We see you, and we're here to help you see EVERYONE ELSE.
 
----
+
 
 ## ✨ Features That Slap ✨
 
@@ -17,7 +17,7 @@
 - **Stalk Everyone** - Keep tabs on unlimited profiles (your entire FYP if you want)
 - **Aesthetic AF** - Color-coded stats that make sense (green = W, red = L)
 
----
+
 
 ## 📱 Installation (So Easy Even Your Grandma Could Do It)
 
@@ -43,7 +43,7 @@
 ### Method 3: For The Lazy Besties
 Coming to Chrome Web Store soon! We're cooking! 👨‍🍳
 
----
+
 
 ## 🕵️‍♀️ How To Be A Professional Stalker
 
@@ -64,7 +64,7 @@ Coming to Chrome Web Store soon! We're cooking! 👨‍🍳
 - **BOOM!** See exactly how many followers they gained/lost
 - Screenshots = immediate group chat material
 
----
+
 
 ## 💯 Why This Extension Is Giving
 
@@ -74,7 +74,7 @@ Coming to Chrome Web Store soon! We're cooking! 👨‍🍳
 - **Zero Waste** - All data stays on YOUR computer
 - **Touch Grass Option** - Delete profiles you're over with one click
 
----
+
 
 ## 🤔 FAQ (Because We Know You're Wondering)
 
@@ -90,7 +90,7 @@ Coming to Chrome Web Store soon! We're cooking! 👨‍🍳
 > **"Is this legal?"**  
 > It's literally just looking at numbers that are already public on Instagram. We're not hacking anything, just being organized stalkers.
 
----
+
 
 ## 🚫 Troubleshooting For When It's Acting Sus
 
@@ -98,13 +98,13 @@ Coming to Chrome Web Store soon! We're cooking! 👨‍🍳
 - **Profile Not Loading?** Make sure you're actually on a profile page
 - **Numbers Look Wrong?** Instagram sometimes shows rounded numbers (1.2M instead of 1,234,567) but we convert them properly
 
----
+
 
 ## 👑 Created By
 
 **Ajmal Razaq Bhatti** (aka the CEO of helping you stalk your ex)
 
----
+
 
 ## Disclaimer
 This extension is **NOT** affiliated with Instagram or Meta. Use responsibly and don't be weird about it (or do, we can't stop you, but don't be creepy). For **educational purposes only**... yeah, *"educational"* 😏
