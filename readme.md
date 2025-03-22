@@ -13,7 +13,7 @@ InstaYou is a Chrome extension that lets you stalk Instagram follower counts lik
 
 ## 📱 Get This RN  
 ### Method 1: DIY Installation (for the tech girlies and boys)
-1. **Grab the ZIP** from the [latest drop](https://github.com/your-repo/releases)  
+1. **Grab the ZIP** from the [latest drop](https://github.com/ajmalrazaqbhatti/InstaYou/releases)  
 2. Extract that bad boy
 3. Hit up `chrome://extensions/` in Chrome
 4. Turn on **"Developer mode"** like you know what you're doing
