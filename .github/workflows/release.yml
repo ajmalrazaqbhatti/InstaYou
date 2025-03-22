@@ -1,25 +1,33 @@
-name: Release Extension
+name: Zip and Release InstaYou
 
 on:
   push:
-    tags:
-      - "v*"
+    branches:
+      - master
 
 jobs:
-  build:
-    name: Build and Release ZIP
+  release:
+    name: Create Zip and Release
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Create ZIP file
-        run: zip -r instaYou.zip InstaYou
+      - name: Zip InstaYou folder
+        run: |
+          zip -r InstaYou.zip InstaYou
+
+      - name: Get current timestamp
+        id: timestamp
+        run: echo "date=$(date +'%Y-%m-%d_%H-%M-%S')" >> $GITHUB_ENV
 
       - name: Create GitHub Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
-          files: instaYou.zip
+          tag_name: release-${{ env.date }}
+          name: Release ${{ env.date }}
+          files: InstaYou.zip
+          body: "Automated release from GitHub Actions."
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
