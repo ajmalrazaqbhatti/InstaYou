@@ -5,6 +5,9 @@ on:
     branches:
       - master
 
+permissions:
+  contents: write  # Grants permission to create releases
+
 jobs:
   release:
     name: Create Zip and Release
@@ -27,7 +30,4 @@ jobs:
         with:
           tag_name: release-${{ steps.timestamp.outputs.date }}
           name: Release ${{ steps.timestamp.outputs.date }}
-          files: InstaYou.zip
-          body: "Automated release from GitHub Actions."
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          files: Insta
