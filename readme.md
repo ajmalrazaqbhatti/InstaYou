@@ -1,4 +1,3 @@
-# InstaYou - Instagram Stats Tracker  
 <img src="Public/logo.png" height="80px" alt="Public/logo.png"/>  
 
 ## Track Instagram Followers & Following Changes 👀  
