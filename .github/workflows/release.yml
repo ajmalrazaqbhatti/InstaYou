@@ -30,4 +30,4 @@ jobs:
         with:
           tag_name: release-${{ steps.timestamp.outputs.date }}
           name: Release ${{ steps.timestamp.outputs.date }}
-          files: Insta
+          files: InstaYou.zip
