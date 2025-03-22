@@ -1,71 +1,110 @@
-<img src="Extension/Public/logo.png" height="80px" alt="InstaYou Logo"/>  
+# InstaYou - The Ultimate Insta Stalking Tool 👀
 
-## Keep Tabs On Your Bestie's Followers & Get The Tea 💅  
-InstaYou is a Chrome extension that lets you stalk Instagram follower counts like the FBI agent you were born to be. See who's unfollowing your faves or track your own clout journey with zero effort.  
+<img src="Extension/Public/logo.png" height="80px" alt="InstaYou Logo"/>
 
-## ✨ The Vibes ✨  
-- **Stalk Private Accounts Too** - Literally any profile you can see, you can stalk (no cap)
-- **Keep Receipts** - Save all the numbers with one click for when you need to pull them out later
-- **Catch The Opps** - See exactly who ditched your profile since last time (their loss tbh)
-- **Timeline Stalking** - View your villain era with timestamps and all
-- **Stalk Everyone** - Your crush, your ex, that person who posts cringe... we don't judge
-- **Aesthetic AF** - Interface that's cleaner than your FYP, stats that actually make sense
+## No Cap, Best Way to Track Your Crush's Followers FR FR 🔥
 
-## 📱 Get This RN  
-### Method 1: DIY Installation (for the tech girlies and boys)
-1. **Grab the ZIP** from the [latest drop](https://github.com/ajmalrazaqbhatti/InstaYou/releases)  
-2. Extract that bad boy
-3. Hit up `chrome://extensions/` in Chrome
-4. Turn on **"Developer mode"** like you know what you're doing
-5. Click **"Load unpacked"** and find the `Extension` folder (it's giving hackerman)
+**InstaYou** is a Chrome extension that lets you track who's following (and unfollowing) literally ANYONE on Instagram. Perfect for keeping tabs on your crush, your ex, your bestie who's always losing followers, or that person from math class who suddenly got famous. We see you, and we're here to help you see EVERYONE ELSE.
 
-### Method 2: Chrome Web Store  
-_(Coming soon bestie, we're working on it)_ 💀
+---
 
-## 👀 How To Stalk Like A Pro  
-1. Visit literally any Insta profile (your finsta, your crush, whoever)
-2. Click the **InstaYou icon** in your browser (it's the cute one)
-3. Hit **"Download User Stats"** to save the tea for later
-4. Click **"Compare Stats"** to see who's been loyal and who's been fake
+## ✨ Features That Slap ✨
 
-### Checking The Receipts  
-After stalking a profile at least twice:
-1. Click **"Compare Stats"** in the popup
-2. Pick the username from your stalking list
-3. Get all the tea:
-   - Followers gained/lost (green is good, red is sus)
-   - Following changes (are they doing a cleanse or what?)
-   - All the timestamps because details matter
+- **No Gatekeeping** - Works on both private AND public profiles (if you can see it, you can track it)
+- **Receipts For Days** - Save follower/following counts with ONE click
+- **Catch The Ops** - See EXACTLY how many followers someone gained or lost since last check
+- **Timeline Tea** - Track changes with timestamps so you can PROVE they bought followers
+- **Stalk Everyone** - Keep tabs on unlimited profiles (your entire FYP if you want)
+- **Aesthetic AF** - Color-coded stats that make sense (green = W, red = L)
 
-## 💯 Pro Stalking Tips  
-- Stalk regularly for maximum drama potential
-- Check both followers AND following to catch the sneaky unfollowers
-- Use on your own profile to track your main character journey
-- Perfect for catching that ex who unfollowed you at 3am (we see you)
+---
 
-## 🤓 Nerdy Details (if you care)  
-- Built with **Chrome Extension Manifest V3** (whatever that means)
-- All the tea stays in your browser
-- No weird server stuff
-- Works with Instagram's latest look
-- We update faster than your TikTok FYP
+## 📱 Installation (So Easy Even Your Grandma Could Do It)
 
-## 🔒 Your Secrets Are Safe  
-- All your stalking data stays on YOUR device
-- We don't need your passwords or anything creepy
-- Only works on Instagram (we're not watching your Roblox)
-- Your stalking habits are between you and your FBI agent
+### Method 1: Download from GitHub Releases (Easiest)
+1. Go to **GitHub Releases**
+2. Download the latest release `.zip` file
+3. Unzip the file to a folder on your computer
+4. Open Chrome and go to `chrome://extensions/`
+5. Turn on **"Developer mode"** (top right corner)
+6. Click **"Load unpacked"** and select the unzipped folder
+7. Let the stalking begin! 🕵️‍♀️
 
-## 😭 When It's Not Working  
-- If it's glitching, just refresh the page (classic)
-- Make sure you're actually on a profile page (not in DMs or whatever)
-- For best results, go straight to the profile (not through stories)
-- If it's still broken, Instagram probably changed something and we're frantically fixing it
+### Method 2: DIY Setup (For The Tech Besties)
+1. Clone this repo:  
+   ```sh
+   git clone https://github.com/ajmalrazaqbhatti/InstaYou.git
+   ```
+2. Open Chrome and go to `chrome://extensions/`
+3. Turn on **"Developer mode"** (top right corner)
+4. Click **"Load unpacked"** and select the `InstaYou` folder
+5. You're in! Time to get nosy 👃
 
-## 📝 Legal Stuff  
-**MIT License** - Use it responsibly or whatever (don't be weird about it)
+### Method 3: For The Lazy Besties
+Coming to Chrome Web Store soon! We're cooking! 👨‍🍳
 
-## 🧠 The Genius Behind This  
-Created by **Ajmal Razaq Bhatti** (stan behavior)
+---
 
-> **Just FYI:** This is for educational vibes only. We're not responsible if you get caught stalking your ex's new partner's cousin's dog's Instagram.
+## 🕵️‍♀️ How To Be A Professional Stalker
+
+### Step 1: Find Your Target
+- Go to ANY Instagram profile (your situationship, your ex, that celebrity you're obsessed with...)
+- Make sure you're on their main page (`instagram.com/username`)
+
+### Step 2: Collect The Tea
+- Click the **InstaYou** icon in your browser toolbar
+- Hit **"Snatch User Stats 📥"** to save their current follower/following counts
+- Your stalking database is GROWING 📈
+
+### Step 3: Spot The Drama Later
+- Come back after a day, week, or whenever you're feeling nosy
+- Visit the same profile and click the **InstaYou** icon again
+- Hit **"Spot the Difference 👀"**
+- Select their username from your list
+- **BOOM!** See exactly how many followers they gained/lost
+- Screenshots = immediate group chat material
+
+---
+
+## 💯 Why This Extension Is Giving
+
+- **Easy AF** - Just two clicks to start stalking
+- **Lowkey** - No one will ever know you're tracking them
+- **No Login Needed** - We don't need your password (that's sus)
+- **Zero Waste** - All data stays on YOUR computer
+- **Touch Grass Option** - Delete profiles you're over with one click
+
+---
+
+## 🤔 FAQ (Because We Know You're Wondering)
+
+> **"Will they know I'm stalking them?"**  
+> Absolutely NOT. This is stealth mode. Nobody knows except you and the FBI agent watching your screen.
+
+> **"Can I see EXACTLY who unfollowed them?"**  
+> Not yet bestie. Instagram's API doesn't allow that without getting blocked. But we show you the counts so you can do the math.
+
+> **"Why isn't it working for some accounts?"**  
+> Make sure you're on their main profile page (not their story or post). Refresh if needed. If the tea still won't spill, they might have a weird profile setup.
+
+> **"Is this legal?"**  
+> It's literally just looking at numbers that are already public on Instagram. We're not hacking anything, just being organized stalkers.
+
+---
+
+## 🚫 Troubleshooting For When It's Acting Sus
+
+- **Stats Not Showing?** Refresh the page and try again
+- **Profile Not Loading?** Make sure you're actually on a profile page
+- **Numbers Look Wrong?** Instagram sometimes shows rounded numbers (1.2M instead of 1,234,567) but we convert them properly
+
+---
+
+## 👑 Created By
+
+**Ajmal Razaq Bhatti** (aka the CEO of helping you stalk your ex)
+
+---
+
+## Disclaimer
+This extension is **NOT** affiliated with Instagram or Meta. Use responsibly and don't be weird about it (or do, we can't stop you, but don't be creepy). For **educational purposes only**... yeah, *"educational"* 😏
