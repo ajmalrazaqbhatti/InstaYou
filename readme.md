@@ -1,4 +1,4 @@
-<img src="Public/logo.png" height="80px" alt="Public/logo.png"/>  
+<img src="Extension/Public/logo.png" height="80px" alt="InstaYou Logo"/>  
 
 ## Track Instagram Followers & Following Changes 👀  
 InstaYou is a Chrome extension that helps you monitor changes in Instagram follower and following counts over time. Track profile growth and discover unfollowers with a simple, user-friendly interface.  
@@ -13,10 +13,11 @@ InstaYou is a Chrome extension that helps you monitor changes in Instagram follo
 
 ## 📥 Installation  
 ### Method 1: Load as Developer  
-1. Download or clone this repository  
-2. Open Chrome and navigate to `chrome://extensions/`  
-3. Enable **"Developer mode"** (toggle in top-right corner)  
-4. Click **"Load unpacked"** and select the InstaYou folder  
+1. **Download the ZIP file** from the [latest release](https://github.com/your-repo/releases)  
+2. Extract the ZIP file  
+3. Open Chrome and navigate to `chrome://extensions/`  
+4. Enable **"Developer mode"** (toggle in top-right corner)  
+5. Click **"Load unpacked"** and select the `Extension` folder  
 
 ### Method 2: From Chrome Web Store  
 _(Coming soon)_  
