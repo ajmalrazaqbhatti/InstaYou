@@ -24,6 +24,14 @@ jobs:
       - name: Get current timestamp
         id: timestamp
         run: echo "::set-output name=date::$(date +'%Y-%m-%d_%H-%M-%S')"
+      
+      - name: Delete previous releases
+        uses: dev-drprasad/delete-older-releases@v0.2.1
+        with:
+          keep_latest: 0
+          delete_tags: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
@@ -31,3 +39,6 @@ jobs:
           tag_name: release-${{ steps.timestamp.outputs.date }}
           name: Release ${{ steps.timestamp.outputs.date }}
           files: InstaYou.zip
+          draft: false
+          prerelease: false
+          generate_release_notes: false
