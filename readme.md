@@ -1,5 +1,5 @@
 # InstaYou - Instagram Stats Tracker  
-<img src="icon.png" height="80px" alt="Public/logo.png"/>  
+<img src="Public/logo.png" height="80px" alt="Public/logo.png"/>  
 
 ## Track Instagram Followers & Following Changes 👀  
 InstaYou is a Chrome extension that helps you monitor changes in Instagram follower and following counts over time. Track profile growth and discover unfollowers with a simple, user-friendly interface.  
