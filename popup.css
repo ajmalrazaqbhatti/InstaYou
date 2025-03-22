@@ -1,0 +1,136 @@
+  body {
+        width: 300px;
+        background-color: black;
+        height: 300px;
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+      }
+      h1 {
+        color: white;
+      }
+      p {
+        color: #fafafa;
+      }
+      .buttons {
+        display: flex;
+        margin-top: 20px;
+        justify-items: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 12px 10px 12px 10px;
+        border-radius: 25px;
+        backdrop-filter: blur(10px);
+      }
+      .buttons > button {
+        width: 100%;
+        border: none;
+        background: black;
+        padding: 15px 30px 15px 30px;
+        border-radius: 99px;
+        font-weight: 400;
+        color: white;
+      }
+      .buttons > button:hover {
+        cursor: pointer;
+      }
+      a:hover {
+        cursor: pointer;
+        z-index: 99;
+      }
+      #userList {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: white;
+        width: 100%;
+        height: 800px;
+        overflow-y: auto;
+        margin-top: 10px;
+        display: none;
+        flex-direction: row;
+        gap: 10px;
+        scrollbar-width: thin;
+        scrollbar-color: #333 #333;
+        scrollbar-base-color: #333;
+        justify-content: space-between;
+        padding: 5px 8px;
+        align-items: start;
+        border-radius: 19px;
+        flex-wrap: wrap;
+      }
+      .upp{
+        display: flex;
+        flex-direction: row;
+        gap : 10px;
+        justify-content: center;
+        align-items: center;
+      }
+      #clearListBtn{
+        background: red;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 99px;
+        cursor: pointer;
+        display: none;
+      }
+      #userList .user-item {
+        padding: 12px 18px;
+        border-radius: 99px;
+        background: rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-top: 5px;
+      }
+      .user-item > .delete-button {
+        background: red;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 99px;
+        cursor: pointer;
+      }
+      #compareResults {
+        color: white;
+        width: 100%;
+        margin-top: 10px;
+        display: none;
+      }
+      .change-positive {
+        color: #4caf50;
+      }
+      .change-negative {
+        color: #f44336;
+      }
+      .change-neutral {
+        color: #ffc107;
+      }
+      .back-button {
+        background: black;
+        color: white;
+        border: 2px solid #212121;
+        padding: 10px 15px;
+        border-radius: 99px;
+        cursor: pointer;
+        display: none;
+      }
+.compare-results{
+    background:rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 5px;
+    border-radius: 19px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+
+
+   

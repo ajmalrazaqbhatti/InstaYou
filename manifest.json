@@ -5,20 +5,20 @@
   "author": "Ajmal Razaq Bhatti",
   "description": "Simple tool to track Instagram followers and following",
   "icons": {
-    "16": "icon.png",
-    "32": "icon.png",
-    "48": "icon.png",
-    "128": "icon.png"
+    "16": "Public/icon.png",
+    "32": "Public/icon.png",
+    "48": "Public/icon.png",
+    "128": "Public/icon.png"
   },
   "permissions": ["storage", "activeTab", "scripting"],
   "host_permissions": ["*://www.instagram.com/*"],
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
-      "16": "icon.png",
-      "32": "icon.png",
-      "48": "icon.png",
-      "128": "icon.png"
+      "16": "Public/icon.png",
+      "32": "Public/icon.png",
+      "48": "Public/icon.png",
+      "128": "Public/icon.png"
     }
   }
 }

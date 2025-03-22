@@ -1,117 +1,36 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8">
     <title>InstaYou</title>
-    <style>
-      body {
-        width: 300px;
-        background-color: black;
-        height: 250px;
-        font-family: Arial, sans-serif;
-        padding: 10px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      h1 {
-        color: white;
-      }
-      p {
-        color: #fafafa;
-      }
-      .buttons {
-        display: flex;
-        margin-top: 20px;
-        justify-items: center;
-        align-items: center;
-        flex-direction: column;
-        gap: 10px;
-        background: rgba(255, 255, 255, 0.1);
-        padding: 12px 10px 12px 10px;
-        border-radius: 25px;
-        backdrop-filter: blur(10px);
-      }
-      .buttons > button {
-        width: 100%;
-        border: none;
-        background: rgba(255, 255, 255, 0.5);
-        padding: 15px 30px 15px 30px;
-        border-radius: 99px;
-        font-weight: 400;
-        color: rgb(0, 0, 0);
-      }
-      .buttons > button:hover {
-        cursor: pointer;
-      }
-      a:hover {
-        cursor: pointer;
-        z-index: 99;
-      }
-      #userList {
-        background-color: rgba(255, 255, 255, 0.1);
-        color: white;
-        width: 100%;
-        max-height: 150px;
-        overflow-y: auto;
-        margin-top: 10px;
-        border-radius: 8px;
-        display: none;
-      }
-      #userList .user-item {
-        padding: 8px 12px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        cursor: pointer;
-      }
-      #userList .user-item:hover {
-        background-color: rgba(255, 255, 255, 0.2);
-      }
-      #compareResults {
-        color: white;
-        width: 100%;
-        margin-top: 10px;
-        display: none;
-      }
-      .change-positive {
-        color: #4caf50;
-      }
-      .change-negative {
-        color: #f44336;
-      }
-      .change-neutral {
-        color: #ffc107;
-      }
-      .back-button {
-        background: rgba(255, 255, 255, 0.3);
-        color: white;
-        border: none;
-        padding: 5px 10px;
-        border-radius: 4px;
-        margin-top: 10px;
-        cursor: pointer;
-        display: none;
-      }
-    </style>
+    <link rel="stylesheet" href="popup.css" />
   </head>
   <body>
-    <img src="logo.png" alt="" style="height: 30px" />
-    <p id="mainText">Lvl Up The Stalking Game with full Rizzzz</p>
-    <img src="blur.png" alt="" style="position: absolute; z-index: -99" />
+    <img src="Public/logo.png" alt="" style="height: 30px" />
+    <p id="mainText">Upgrade Your Stalking Skills 🚀</p>
+    <img src="Public/blur.png" alt="" style="position: absolute; z-index: -99" />
     
     <div id="mainButtons" class="buttons">
-      <button id="downloadBtn">Download User Data</button>
-      <button id="compareBtn">Compare User Data</button>
+      <button id="downloadBtn">Snatch User Stats 📥</button>
+      <button id="compareBtn">Spot the Difference 👀</button>
     </div>
+    <div class="upp">
+      <button id="backButton" class="back-button">Back</button>
+       <button id="clearListBtn">Yeet the List 🗑️</button>
     
+    </div>
+   
+
     <div id="userList"></div>
     <div id="compareResults"></div>
-    <button id="backButton" class="back-button">Back</button>
     
-    <p>
-      Hulululu By
-      <a href="#" style="color: orangered; text-decoration: none"
-        >Ajmal Razaq Bhatti</a
-      >
+    <p id="author">
+      Cooked up by  
+      <a href="#" style="color: orangered; text-decoration: none">
+        Ajmal Razaq Bhatti 🚀
+      </a>
     </p>
+    
     <script src="popup.js"></script>
   </body>
 </html>

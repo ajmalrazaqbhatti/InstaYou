@@ -1,44 +1,71 @@
-# Discontinued:
-The idea was to track followers and following using DOM manipulation, but there’s an issue—when the followers or following modal opens, the numbers aren’t accurate. I couldn’t pinpoint the problem maybe it's on insta end that data is not fetched correctly or shown, so I’ve decided to discontinue the project for now.
+# InstaYou - Instagram Stats Tracker  
+<img src="icon.png" height="80px" alt="InstaYou Logo"/>  
 
+## Track Instagram Followers & Following Changes 👀  
+InstaYou is a Chrome extension that helps you monitor changes in Instagram follower and following counts over time. Track profile growth and discover unfollowers with a simple, user-friendly interface.  
 
-<img src="https://github.com/user-attachments/assets/47e8ab75-df50-4a26-a376-e584ce8dd8a5" height="60px"/>
+## 🔍 Features  
+- **Works on Both Private & Public Profiles** - Monitor stats on any Instagram profile you can view  
+- **Save Stats** - Capture follower and following counts with one click  
+- **Track Changes** - See exactly how many followers gained or lost since last check  
+- **Compare Over Time** - View historical data with timestamps  
+- **Multiple Profiles** - Monitor any number of Instagram accounts  
+- **Clean Interface** - Easy-to-understand statistics with color-coded changes  
 
-# InstaYou 🔥👀
+## 📥 Installation  
+### Method 1: Load as Developer  
+1. Download or clone this repository  
+2. Open Chrome and navigate to `chrome://extensions/`  
+3. Enable **"Developer mode"** (toggle in top-right corner)  
+4. Click **"Load unpacked"** and select the InstaYou folder  
 
-### Level up your stalking game! Track followers & following changes effortlessly. 😏🚀
+### Method 2: From Chrome Web Store  
+_(Coming soon)_  
 
-## 📌 Features
+## 🚀 How to Use  
+1. Visit any Instagram profile in Chrome (private or public)  
+2. Click the **InstaYou extension icon** in your browser toolbar  
+3. Click **"Download User Stats"** to save the current follower/following counts  
+4. Click **"Compare Stats"** to view previously saved profiles  
 
-- **Download Followers & Following** – Grab a user's entire list instantly.
-- **Compare Data** – See who's new, who's gone, and track changes over time.
-- **Multi-User Tracking** – Save and monitor multiple profiles.
-- **Quick Navigation** – Jump to saved profiles directly.
+### Viewing Changes  
+After saving stats for a profile at least twice:  
+1. Click **"Compare Stats"** in the extension popup  
+2. Select the username from your saved list  
+3. View detailed comparison showing:  
+   - Followers gained/lost (with color indicators)  
+   - Following count changes  
+   - Previous and current stats with timestamps  
 
-## 🚀 Installation
+## 💡 Tips for Best Results  
+- Save stats regularly to build a comprehensive history  
+- Check both follower and following counts to identify unfollowers  
+- Use on profiles you visit frequently to track growth patterns  
+- Works on your own profile too - track your personal Instagram growth!  
 
-1. **Clone this repo**
-   ```bash
-   git clone https://github.com/ajmalrazaqbhatti/InstaYou.git
-   ```
-2. **Load the extension in Chrome:**
-   - Open `chrome://extensions/`
-   - Enable **Developer mode** (top right)
-   - Click **Load unpacked**
-   - Select the `InstaYou` folder
+## 🛠️ Technical Details  
+- Uses **Chrome Extension Manifest V3**  
+- Stores data locally in Chrome's storage API  
+- No external server dependencies  
+- Uses advanced selectors to extract stats from Instagram's UI  
+- Compatible with Instagram's latest interface updates  
 
-## 🛠️ How to Use
+## 🔒 Privacy  
+- All data is stored locally in your browser  
+- No login information is collected or required  
+- The extension requires access only to `instagram.com` domain  
+- Your browsing data never leaves your computer  
 
-1. **Go to an Instagram profile** (e.g., `instagram.com/username`).
-2. Click the **InstaYou popup** to:
-   - **Download User Data** 📥
-   - **Compare with Previous Data** 🔍
-3. View changes & navigate to saved profiles easily.
+## ❓ Troubleshooting  
+- If counts aren't displaying, try refreshing the Instagram page  
+- Make sure you're on a profile page (e.g., `instagram.com/username`)  
+- For best results, visit the profile directly rather than through stories or feeds  
+- If counts still don't appear, Instagram may have updated their UI - an extension update may be needed  
 
-## ⚠️ Disclaimer
+## 📝 License  
+**MIT License** - Use responsibly and respect Instagram's terms of service  
 
-This extension is for educational purposes only. Use responsibly! 🔥
+## 👨‍💻 Author  
+Created by **Ajmal Razaq Bhatti**  
 
----
-
-Made with ❤️ by [Ajmal Razaq](https://github.com/ajmalrazaqbhatti)
+> **Educational Purpose Only:** Use on your own account. The developer is not responsible for any misuse.  
