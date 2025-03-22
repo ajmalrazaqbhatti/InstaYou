@@ -1,71 +1,73 @@
+# InstaYou - The Ultimate Insta Stalking Tool 👀🔍
+
 <img src="Extension/Public/logo.png" height="80px" alt="InstaYou Logo"/>  
 
-## Track Instagram Followers & Following Changes 👀  
-InstaYou is a Chrome extension that helps you monitor changes in Instagram follower and following counts over time. Track profile growth and discover unfollowers with a simple, user-friendly interface.  
+## Keep Tabs On Your Bestie's Followers & Get The Tea 💅  
+InstaYou is a Chrome extension that lets you stalk Instagram follower counts like the FBI agent you were born to be. See who's unfollowing your faves or track your own clout journey with zero effort.  
 
-## 🔍 Features  
-- **Works on Both Private & Public Profiles** - Monitor stats on any Instagram profile you can view  
-- **Save Stats** - Capture follower and following counts with one click  
-- **Track Changes** - See exactly how many followers gained or lost since last check  
-- **Compare Over Time** - View historical data with timestamps  
-- **Multiple Profiles** - Monitor any number of Instagram accounts  
-- **Clean Interface** - Easy-to-understand statistics with color-coded changes  
+## ✨ The Vibes ✨  
+- **Stalk Private Accounts Too** - Literally any profile you can see, you can stalk (no cap)
+- **Keep Receipts** - Save all the numbers with one click for when you need to pull them out later
+- **Catch The Opps** - See exactly who ditched your profile since last time (their loss tbh)
+- **Timeline Stalking** - View your villain era with timestamps and all
+- **Stalk Everyone** - Your crush, your ex, that person who posts cringe... we don't judge
+- **Aesthetic AF** - Interface that's cleaner than your FYP, stats that actually make sense
 
-## 📥 Installation  
-### Method 1: Load as Developer  
-1. **Download the ZIP file** from the [latest release](https://github.com/your-repo/releases)  
-2. Extract the ZIP file  
-3. Open Chrome and navigate to `chrome://extensions/`  
-4. Enable **"Developer mode"** (toggle in top-right corner)  
-5. Click **"Load unpacked"** and select the `Extension` folder  
+## 📱 Get This RN  
+### Method 1: DIY Installation (for the tech girlies and boys)
+1. **Grab the ZIP** from the [latest drop](https://github.com/your-repo/releases)  
+2. Extract that bad boy
+3. Hit up `chrome://extensions/` in Chrome
+4. Turn on **"Developer mode"** like you know what you're doing
+5. Click **"Load unpacked"** and find the `Extension` folder (it's giving hackerman)
 
-### Method 2: From Chrome Web Store  
-_(Coming soon)_  
+### Method 2: Chrome Web Store  
+_(Coming soon bestie, we're working on it)_ 💀
 
-## 🚀 How to Use  
-1. Visit any Instagram profile in Chrome (private or public)  
-2. Click the **InstaYou extension icon** in your browser toolbar  
-3. Click **"Download User Stats"** to save the current follower/following counts  
-4. Click **"Compare Stats"** to view previously saved profiles  
+## 👀 How To Stalk Like A Pro  
+1. Visit literally any Insta profile (your finsta, your crush, whoever)
+2. Click the **InstaYou icon** in your browser (it's the cute one)
+3. Hit **"Download User Stats"** to save the tea for later
+4. Click **"Compare Stats"** to see who's been loyal and who's been fake
 
-### Viewing Changes  
-After saving stats for a profile at least twice:  
-1. Click **"Compare Stats"** in the extension popup  
-2. Select the username from your saved list  
-3. View detailed comparison showing:  
-   - Followers gained/lost (with color indicators)  
-   - Following count changes  
-   - Previous and current stats with timestamps  
+### Checking The Receipts  
+After stalking a profile at least twice:
+1. Click **"Compare Stats"** in the popup
+2. Pick the username from your stalking list
+3. Get all the tea:
+   - Followers gained/lost (green is good, red is sus)
+   - Following changes (are they doing a cleanse or what?)
+   - All the timestamps because details matter
 
-## 💡 Tips for Best Results  
-- Save stats regularly to build a comprehensive history  
-- Check both follower and following counts to identify unfollowers  
-- Use on profiles you visit frequently to track growth patterns  
-- Works on your own profile too - track your personal Instagram growth!  
+## 💯 Pro Stalking Tips  
+- Stalk regularly for maximum drama potential
+- Check both followers AND following to catch the sneaky unfollowers
+- Use on your own profile to track your main character journey
+- Perfect for catching that ex who unfollowed you at 3am (we see you)
 
-## 🛠️ Technical Details  
-- Uses **Chrome Extension Manifest V3**  
-- Stores data locally in Chrome's storage API  
-- No external server dependencies  
-- Uses advanced selectors to extract stats from Instagram's UI  
-- Compatible with Instagram's latest interface updates  
+## 🤓 Nerdy Details (if you care)  
+- Built with **Chrome Extension Manifest V3** (whatever that means)
+- All the tea stays in your browser
+- No weird server stuff
+- Works with Instagram's latest look
+- We update faster than your TikTok FYP
 
-## 🔒 Privacy  
-- All data is stored locally in your browser  
-- No login information is collected or required  
-- The extension requires access only to `instagram.com` domain  
-- Your browsing data never leaves your computer  
+## 🔒 Your Secrets Are Safe  
+- All your stalking data stays on YOUR device
+- We don't need your passwords or anything creepy
+- Only works on Instagram (we're not watching your Roblox)
+- Your stalking habits are between you and your FBI agent
 
-## ❓ Troubleshooting  
-- If counts aren't displaying, try refreshing the Instagram page  
-- Make sure you're on a profile page (e.g., `instagram.com/username`)  
-- For best results, visit the profile directly rather than through stories or feeds  
-- If counts still don't appear, Instagram may have updated their UI - an extension update may be needed  
+## 😭 When It's Not Working  
+- If it's glitching, just refresh the page (classic)
+- Make sure you're actually on a profile page (not in DMs or whatever)
+- For best results, go straight to the profile (not through stories)
+- If it's still broken, Instagram probably changed something and we're frantically fixing it
 
-## 📝 License  
-**MIT License** - Use responsibly and respect Instagram's terms of service  
+## 📝 Legal Stuff  
+**MIT License** - Use it responsibly or whatever (don't be weird about it)
 
-## 👨‍💻 Author  
-Created by **Ajmal Razaq Bhatti**  
+## 🧠 The Genius Behind This  
+Created by **Ajmal Razaq Bhatti** (stan behavior)
 
-> **Educational Purpose Only:** Use on your own account. The developer is not responsible for any misuse.  
+> **Just FYI:** This is for educational vibes only. We're not responsible if you get caught stalking your ex's new partner's cousin's dog's Instagram.
