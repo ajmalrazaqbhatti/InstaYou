@@ -80,13 +80,11 @@ function showSavedUsersList() {
       const deleteButton = document.createElement("button");
       deleteButton.textContent = "Delete";
       deleteButton.addEventListener("click", () => {
-        if (confirm(`Are you sure you want to delete stats for ${username}?`)) {
           const storageKey = `instagram_stats_${username}`;
           chrome.storage.local.remove(storageKey, () => {
-            showPageAlert(`Cleared stored stats for ${username}`);
             showSavedUsersList();
           });
-        }
+      
       });
       deleteButton.className = "delete-button";
       const useritemname = document.createElement("div");
@@ -468,15 +466,45 @@ chrome.runtime.onMessage.addListener((message) => {
         
         chrome.storage.local.set({[storageKey]: JSON.stringify(initialData)}, () => {
           
-          // Show results div with initial data message
+          // Show results div with new card UI for initial data
           const resultsDiv = document.getElementById("compareResults");
           resultsDiv.innerHTML = `
-            <h3>Initial data for ${message.username}</h3>
-            <p>First recorded stats:</p>
-            <p>Date: ${message.timestamp}</p>
-            <p>Followers: ${message.followerCount}</p>
-            <p>Following: ${message.followingCount}</p>
-            <p>Check back later to see changes!</p>
+            <div class="stats-card">
+              <div class="stats-header">
+                <div class="user-info">
+                  <div class="user-avatar">
+                    <i class="fas fa-user"></i>
+                  </div>
+                  <div>
+                    <p class="username">@${message.username}</p>
+                    <p class="timestamp">First check: ${message.timestamp}</p>
+                  </div>
+                </div>
+                <div class="stats-icon">
+                  <i class="fas fa-eye"></i>
+                </div>
+              </div>
+              <div class="stats-grid">
+                <div class="stats-box">
+                  <p class="stats-label">Followers</p>
+                  <div class="stats-value-container">
+                    <p class="stats-value">${formatNumber(message.followerCount)}</p>
+                    <p class="stats-neutral">Initial</p>
+                  </div>
+                </div>
+                <div class="stats-box">
+                  <p class="stats-label">Following</p>
+                  <div class="stats-value-container">
+                    <p class="stats-value">${formatNumber(message.followingCount)}</p>
+                    <p class="stats-neutral">Initial</p>
+                  </div>
+                </div>
+              </div>
+              <div class="stats-footer">
+                <span class="stats-history-link">View History</span>
+                <button class="stats-update-btn">Update Stats</button>
+              </div>
+            </div>
           `;
           document.getElementById("userList").style.display = "none";
           resultsDiv.style.display = "flex";
@@ -508,43 +536,74 @@ chrome.runtime.onMessage.addListener((message) => {
         chrome.storage.local.set({[storageKey]: JSON.stringify(dataArray)});
       }
     
-      function getChangeClass(change) {
-        if (change > 0) return "change-positive";
-        if (change < 0) return "change-negative";
-        return "change-neutral";
-      }
-      
-      function formatChange(change) {
-        if (change > 0) return "+" + change;
-        return change.toString();
-      }
-      
-      const resultHTML = `
-        <p>Last update: ${lastEntry.timestamp || "Unknown"}</p>
-        <p>Current update: ${message.timestamp}</p>
-        <p>Followers: ${lastEntry.followerCount || 0} → ${message.followerCount} 
-           <span class="${getChangeClass(followerChange)}">
-             (${formatChange(followerChange)})
-           </span>
-        </p>
-        <p>Following: ${lastEntry.followingCount || 0} → ${message.followingCount} 
-           <span class="${getChangeClass(followingChange)}">
-             (${formatChange(followingChange)})
-           </span>
-        </p>
-      `;
-      
-      // Show results
+      // Create the new styled UI
       const resultsDiv = document.getElementById("compareResults");
-      resultsDiv.classList.add("compare-results");
-      resultsDiv.innerHTML = resultHTML;
+      resultsDiv.innerHTML = `
+        <div class="stats-card">
+          <div class="stats-header">
+            <div class="user-info">
+              <div class="user-avatar">
+                <i class="fas fa-user"></i>
+              </div>
+              <div>
+                <p class="username">@${message.username}</p>
+                <p class="timestamp">Last checked: ${message.timestamp}</p>
+              </div>
+            </div>
+          
+          </div>
+          <div class="stats-grid">
+            <div class="stats-box">
+              <p class="stats-label">Followers</p>
+              <div class="stats-value-container">
+                <p class="stats-value">${formatNumber(message.followerCount)}</p>
+                <p class="${getChangeClass(followerChange)}">${formatChangeWithEmoji(followerChange)}</p>
+              </div>
+            </div>
+            <div class="stats-box">
+              <p class="stats-label">Following</p>
+              <div class="stats-value-container">
+                <p class="stats-value">${formatNumber(message.followingCount)}</p>
+                <p class="${getChangeClass(followingChange)}">${formatChangeWithEmoji(followingChange)}</p>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+      `;
 
       document.getElementById("userList").style.display = "none";
       resultsDiv.style.display = "flex";
+      resultsDiv.classList.add("stats-results");
       document.getElementById("backButton").style.display = "block";
     });
   }
 });
+
+// Helper functions for formatting
+function formatNumber(num) {
+  if (num === null || num === undefined) return "N/A";
+  
+  if (num >= 1000000) {
+    return (num / 1000000).toFixed(1) + 'M';
+  } else if (num >= 1000) {
+    return (num / 1000).toFixed(1) + 'K';
+  }
+  return num.toString();
+}
+
+function getChangeClass(change) {
+  if (change > 0) return "stats-positive";
+  if (change < 0) return "stats-negative";
+  return "stats-neutral";
+}
+
+function formatChangeWithEmoji(change) {
+  if (change === 0) return "No change";
+  const emoji = change > 0 ? "🔥" : "💀";
+  const prefix = change > 0 ? "+" : "";
+  return `${prefix}${formatNumber(change)} ${emoji}`;
+}
 
 chrome.storage.local.get(null, (items) => {
   let count = 0;
@@ -573,7 +632,6 @@ function clearStoredData() {
         
         if (username) {
           chrome.storage.local.remove(storageKey, () => {
-            showPageAlert(`Cleared stored stats for ${username}`);
             document.getElementById("backButton").click();
           });
         }

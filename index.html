@@ -6,357 +6,423 @@
     <title>InstaYou - Elite Insta Stalker Tool</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'red-primary': '#ff0000',
-                        'red-light': '#ff3333',
-                        'red-bright': '#ff1a1a',
-                        'red-dark': '#cc0000',
-                        'red-deep': '#990000',
-                        'black': '#000000',
-                        'black-light': '#121212',
-                        'black-lighter': '#181818',
+                        'primary': '#ff0000',
+                        'primary-light': '#ff3333',
+                        'primary-dark': '#cc0000',
+                        'border': '#212121',
+                        'card': '#0a0a0a',
+                        'card-foreground': '#ffffff',
+                        'background': '#000000',
+                        'foreground': '#ffffff',
+                        'muted': '#171717',
+                        'muted-foreground': '#a1a1aa'
                     },
-                    animation: {
-                        'gradient-x': 'gradient-x 10s ease infinite',
-                        'gradient-y': 'gradient-y 10s ease infinite',
-                        'gradient-xy': 'gradient-xy 10s ease infinite',
+                    fontFamily: {
+                        'sans': ['Outfit', 'sans-serif'],
                     },
-                    keyframes: {
-                        'gradient-y': {
-                            '0%, 100%': {
-                                'background-size': '400% 400%',
-                                'background-position': 'center top'
-                            },
-                            '50%': {
-                                'background-size': '200% 200%',
-                                'background-position': 'center center'
-                            }
-                        },
-                        'gradient-x': {
-                            '0%, 100%': {
-                                'background-size': '200% 200%',
-                                'background-position': 'left center'
-                            },
-                            '50%': {
-                                'background-size': '200% 200%',
-                                'background-position': 'right center'
-                            }
-                        },
-                        'gradient-xy': {
-                            '0%, 100%': {
-                                'background-size': '400% 400%',
-                                'background-position': 'left center'
-                            },
-                            '50%': {
-                                'background-size': '200% 200%',
-                                'background-position': 'right center'
-                            }
-                        }
+                    boxShadow: {
+                        'sm': '0 1px 2px 0 rgba(255, 0, 0, 0.05)',
+                        'DEFAULT': '0 1px 3px 0 rgba(255, 0, 0, 0.1), 0 1px 2px 0 rgba(255, 0, 0, 0.06)',
+                        'md': '0 4px 6px -1px rgba(255, 0, 0, 0.1), 0 2px 4px -1px rgba(255, 0, 0, 0.06)',
+                        'lg': '0 10px 15px -3px rgba(255, 0, 0, 0.1), 0 4px 6px -2px rgba(255, 0, 0, 0.05)',
+                        'xl': '0 20px 25px -5px rgba(255, 0, 0, 0.1), 0 10px 10px -5px rgba(255, 0, 0, 0.04)',
+                        'inner': 'inset 0 2px 4px 0 rgba(255, 0, 0, 0.06)',
+                        'none': 'none',
+                        'glow': '0 0 20px -5px rgba(255, 0, 0, 0.15)',
+                    },
+                    borderWidth: {
+                        DEFAULT: '1px',
+                        '0': '0',
+                        '2': '2px',
+                        '3': '3px',
+                        '4': '4px',
                     }
                 }
             }
         }
     </script>
     <style>
-        .glass-effect {
-            background: rgba(10, 10, 10, 0.5);
+        body {
+            background-color: #000000;
+            font-family: 'Outfit', sans-serif;
+            line-height: 1.7;
+        }
+        
+        /* ShadcnUI-inspired component styles */
+        .shadcn-card {
+            background-color: #0a0a0a;
+            border: 1px solid #212121;
+            border-radius: 1.5rem;
+            padding: 1.75rem;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        
+        .shadcn-card:hover {
+            border-color: #2a2a2a;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .shadcn-button-primary {
+            background-color: #ff0000;
+            color: white;
+            border-radius: 99px;
+            font-weight: 500;
+            padding: 0.625rem 1.25rem;
+            transition: all 0.2s;
+            border: 1px solid #ff0000;
+            letter-spacing: 0.01em;
+        }
+        
+        .shadcn-button-primary:hover {
+            background-color: #cc0000;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 6px -1px rgba(255, 0, 0, 0.2);
+        }
+        
+        .shadcn-button-outline {
+            background-color: transparent;
+            color: white;
+            border: 2px solid #212121;
+            border-radius: 99px;
+            font-weight: 500;
+            padding: 0.625rem 1.25rem;
+            transition: all 0.2s;
+            letter-spacing: 0.01em;
+        }
+        
+        .shadcn-button-outline:hover {
+            background-color: rgba(255, 0, 0, 0.1);
+            border-color: #ff0000;
+            transform: translateY(-1px);
+        }
+        
+        .shadcn-input {
+            background-color: #0a0a0a;
+            border: 1px solid #212121;
+            border-radius: 0.5rem;
+            padding: 0.625rem 0.875rem;
+            color: white;
+            width: 100%;
+            transition: border-color 0.2s;
+        }
+        
+        .shadcn-input:focus {
+            outline: none;
+            border-color: #ff0000;
+            box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.2);
+        }
+        
+        .shadcn-badge {
+            background-color: rgba(255, 0, 0, 0.1);
+            color: #ff0000;
+            width: fit-content;
+            font-size: 0.75rem;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+        
+        .shadcn-nav {
+            background-color: rgba(10, 10, 10, 0.8);
             backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 0, 0, 0.1);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
         }
-        .animate-gradient-x {
-            background-size: 200% 200%;
-            animation: gradient-x 15s ease infinite;
+        
+        .overlay-dots {
+            background-image: radial-gradient(rgba(255, 0, 0, 0.1) 1px, transparent 1px);
+            background-size: 25px 25px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            opacity: 0.3;
+            pointer-events: none;
         }
-        @keyframes gradient-x {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
+        
+        .gradient-glow {
+            position: fixed;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255, 0, 0, 0.15) 0%, rgba(255, 0, 0, 0) 70%);
+            border-radius: 50%;
+            filter: blur(70px);
+            z-index: -1;
+            pointer-events: none;
         }
-        .glow {
-            text-shadow: 0 0 10px rgba(255, 0, 0, 0.5), 0 0 20px rgba(255, 0, 0, 0.3);
+        
+        .feature-icon {
+            color: #ff0000;
+            width: 1.5rem;
+            height: 1.5rem;
         }
-        .btn-shine {
+        
+        /* Improved navigation link hover effect */
+        .nav-link {
             position: relative;
-            overflow: hidden;
         }
-        .btn-shine:after {
+        
+        .nav-link::after {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(
-                to bottom right,
-                rgba(255, 255, 255, 0) 0%,
-                rgba(255, 255, 255, 0.2) 50%,
-                rgba(255, 255, 255, 0) 100%
-            );
-            transform: rotate(45deg);
-            animation: shine 3s infinite;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #ff0000;
+            transition: width 0.3s ease;
         }
-        @keyframes shine {
-            0% { transform: translateX(-100%) rotate(45deg); }
-            100% { transform: translateX(100%) rotate(45deg); }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        /* Improved scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ff0000;
+        }
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Enhanced focus states for accessibility */
+        a:focus, button:focus {
+            outline: 2px solid #ff0000;
+            outline-offset: 4px;
         }
     </style>
 </head>
-<body class="font-sans bg-black text-gray-300">
+<body class="text-foreground">
+    <div class="overlay-dots"></div>
+    <div class="gradient-glow top-0 right-0"></div>
+    <div class="gradient-glow bottom-0 left-0"></div>
+    
     <!-- Navbar -->
-    <nav class="bg-black shadow-md sticky top-0 z-50 border-b border-red-dark/30">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex items-center">
-                    <img src="Extension/Public/logo.png" alt="InstaYou Logo" class="h-8 w-auto mr-2">
-                </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#features" class="text-gray-300 hover:text-red-primary transition duration-150">The Vibe ✨</a>
-                    <a href="#how-it-works" class="text-gray-300 hover:text-red-primary transition duration-150">How It Works</a>
-                    <a href="#install" class="text-gray-300 hover:text-red-primary transition duration-150">Get It</a>
-                    <a href="#faq" class="text-gray-300 hover:text-red-primary transition duration-150">FAQ</a>
-                </div>
-                <!-- User Info -->
-                <div class="hidden md:flex items-center">
-                    <div class="flex items-center bg-black-lighter px-3 py-1 rounded-full border border-red-dark/20">
-                        <div class="w-6 h-6 rounded-full bg-gradient-to-r from-red-dark to-red-primary flex items-center justify-center text-white text-xs">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <span class="ml-2 text-sm text-white">@ajmalrazaqbhatti</span>
-                    </div>
-                </div>
-                <div class="flex items-center md:hidden">
-                    <button class="text-gray-300 hover:text-red-primary">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
-                </div>
+    <nav class="sticky top-0 z-50 shadcn-nav">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center max-w-5xl">
+            <div class="flex items-center space-x-3">
+                <img src="InstaYou/Public/icon.png" alt="InstaYou Logo" class="h-8">
+                <span class="font-semibold tracking-tight">InstaYou</span>
             </div>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#features" class="nav-link text-sm text-muted-foreground hover:text-foreground transition">Features</a>
+                <a href="#how-to-use" class="nav-link text-sm text-muted-foreground hover:text-foreground transition">How To Use</a>
+                <a href="#install" class="nav-link text-sm text-muted-foreground hover:text-foreground transition">Install</a>
+                <a href="#faq" class="nav-link text-sm text-muted-foreground hover:text-foreground transition">FAQ</a>
+                <a href="https://github.com/ajmalrazaqbhatti/InstaYou" class="nav-link text-sm text-muted-foreground hover:text-primary transition flex items-center gap-1">
+                    <i class="fab fa-github mr-1"></i> GitHub
+                </a>
+            </div>
+            <a href="https://github.com/ajmalrazaqbhatti/InstaYou/releases" 
+               class="shadcn-button-primary flex items-center">
+                <i class="fas fa-download mr-2"></i> Download
+            </a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <div class="bg-black relative overflow-hidden">
-        <!-- Animated gradient background effect -->
-        <div class="absolute inset-0 bg-gradient-to-r from-red-deep/10 via-red-primary/10 to-red-light/10 animate-gradient-x opacity-30"></div>
-        
-        <!-- Decorative orbs -->
-        <div class="absolute top-20 left-10 w-40 h-40 rounded-full bg-red-deep/20 blur-3xl"></div>
-        <div class="absolute bottom-20 right-10 w-60 h-60 rounded-full bg-red-light/20 blur-3xl"></div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 relative z-10">
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 md:pr-8">
-                    <div class="relative">
-                        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4 glow">
-                            <span class="block text-white">Stalk Anyone's</span>
-                            <span class="block bg-gradient-to-r from-red-dark to-red-light bg-clip-text text-transparent">Instagram Account 👀</span>
-                        </h1>
-                        <div class="absolute -top-4 -left-4 w-16 h-16 border border-red-primary/30 rounded-full animate-pulse"></div>
-                    </div>
-                    <p class="text-xl text-gray-400 mb-8">See who's following (or unfollowing) your crush, ex, friends, or fave celebs with this elite stalking tool.</p>
-                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                        <a href="#install" class="btn-shine px-8 py-3 bg-gradient-to-r from-red-dark to-red-primary rounded-lg text-white font-medium shadow-lg shadow-red-primary/20 hover:shadow-xl hover:shadow-red-primary/40 transform transition hover:-translate-y-0.5">
-                            Get This RN
-                        </a>
-                        <a href="#how-it-works" class="px-8 py-3 border border-gray-700 rounded-lg font-medium text-gray-300 hover:text-red-primary hover:border-red-primary transition">
-                            Spill The Tea
-                        </a>
-                    </div>
-                    <!-- Current Date Display -->
-                    <div class="mt-6 inline-block bg-black-lighter px-4 py-2 rounded-lg border border-red-dark/20 text-sm">
-                        <i class="fas fa-clock text-red-primary mr-2"></i>
-                        <span class="text-gray-400">Current Time:</span>
-                        <span class="ml-2 text-white">2025-03-22 02:56:58 UTC</span>
-                    </div>
-                </div>
-                <div class="md:w-1/2 mt-12 md:mt-0">
-                    <div class="glass-effect rounded-2xl p-8 border border-red-dark/20 shadow-xl shadow-red-primary/10">
-                        <div class="flex items-center justify-between mb-6">
-                            <div class="flex items-center">
-                                <div class="w-10 h-10 rounded-full bg-gradient-to-r from-red-dark to-red-primary"></div>
-                                <div class="ml-3">
-                                    <div class="text-sm font-semibold">@kendalljenner</div>
-                                    <div class="text-xs text-gray-500">Last stalked by you: 2025-03-22 02:56:58</div>
-                                </div>
-                            </div>
-                            <div class="text-red-primary">
-                                <i class="fas fa-eye"></i>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4">
-                            <div class="bg-black-lighter p-4 rounded-lg border border-red-dark/20">
-                                <div class="text-sm text-gray-400">Their Followers</div>
-                                <div class="text-xl font-bold flex items-center">
-                                    278.5M
-                                    <span class="ml-2 text-green-500 text-sm flex items-center">
-                                        <i class="fas fa-arrow-up mr-1"></i> +230K 🔥
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="bg-black-lighter p-4 rounded-lg border border-red-dark/20">
-                                <div class="text-sm text-gray-400">Their Following</div>
-                                <div class="text-xl font-bold flex items-center">
-                                    187
-                                    <span class="ml-2 text-red-500 text-sm flex items-center">
-                                        <i class="fas fa-arrow-down mr-1"></i> -5 💀
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mt-4 pt-4 border-t border-gray-800">
-                            <div class="flex justify-between items-center">
-                                <button class="text-sm text-red-primary">View History 🧾</button>
-                                <button class="text-sm text-white bg-red-primary px-3 py-1 rounded-md">Update Stats</button>
-                            </div>
-                        </div>
-                    </div>
+    <section class="relative min-h-screen py-24 md:py-32 overflow-hidden flex items-center justify-center">
+        <div class="container mx-auto px-6 relative z-10 max-w-5xl">
+            <div class="flex flex-col items-center text-center mb-20">
+                <h1 class="text-4xl md:text-6xl font-bold mb-8 leading-tight max-w-3xl tracking-tight">
+                    The Ultimate <span class="text-primary">Insta Stalking</span> Tool 👀
+                </h1>
+                <p class="text-muted-foreground mb-10 leading-relaxed max-w-2xl mx-auto text-lg">
+                    Track who's following (and unfollowing) literally ANYONE on Instagram. Perfect for keeping tabs on your faves, your ex, your bestie who's always losing followers, or that person who suddenly got famous.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#install" class="shadcn-button-primary flex items-center justify-center">
+                        <i class="fas fa-download mr-2"></i> Get It Now
+                    </a>
+                    <a href="#how-to-use" class="shadcn-button-outline flex items-center justify-center">
+                        <i class="fas fa-question-circle mr-2"></i> How To Use It
+                    </a>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <!-- Features Section -->
-    <section id="features" class="py-16 bg-black relative overflow-hidden">
-        <!-- Background effect -->
-        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-red-primary/10 via-transparent to-transparent opacity-30"></div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-white">Slay Features</h2>
-                <p class="mt-4 text-xl text-gray-400 max-w-3xl mx-auto">InstaYou is bussin' fr fr. Here's why it's giving everything:</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Feature 1 -->
-                <div class="glass-effect rounded-xl p-8 border border-red-dark/20 shadow-xl shadow-red-primary/5 hover:shadow-red-primary/10 transition group">
-                    <div class="w-12 h-12 bg-gradient-to-br from-red-dark to-red-primary rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition">
-                        <i class="fas fa-lock text-white text-xl"></i>
+            
+            <div class="shadcn-card max-w-md mx-auto relative transform hover:scale-105 transition-transform duration-300">
+                <div class="absolute w-24 h-24 bg-primary/5 rounded-full -top-4 -right-4 blur-2xl"></div>
+                <div class="flex justify-between items-center mb-6">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full flex items-center justify-center border border-border bg-card">
+                            <i class="fas fa-user text-primary"></i>
+                        </div>
+                        <div>
+                            <p class="font-medium">@kendalljenner</p>
+                            <p class="text-xs text-muted-foreground">Last checked: Just now</p>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2 text-white">Stalk Private Accounts 🕵️</h3>
-                    <p class="text-gray-400">Track any account you can view - your bestie's private finsta? That influencer you're obsessed with? We got you.</p>
+                    <div class="text-primary">
+                        <i class="fas fa-eye"></i>
+                    </div>
                 </div>
-
-                <!-- Feature 2 -->
-                <div class="glass-effect rounded-xl p-8 border border-red-dark/20 shadow-xl shadow-red-primary/5 hover:shadow-red-primary/10 transition group">
-                    <div class="w-12 h-12 bg-gradient-to-br from-red-primary to-red-light rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition">
-                        <i class="fas fa-save text-white text-xl"></i>
+                <div class="space-y-4">
+                    <div class="bg-muted p-4 rounded-lg border border-border">
+                        <p class="text-xs text-muted-foreground mb-1">Followers</p>
+                        <div class="flex justify-between items-center">
+                            <p class="text-xl font-bold">279.2M</p>
+                            <p class="text-green-400 text-xs flex items-center gap-1">
+                                <i class="fas fa-arrow-up"></i> 240K
+                            </p>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2 text-white">Keep Receipts 📝</h3>
-                    <p class="text-gray-400">Save all the tea about who they're following and who's following them. Perfect for the "I told you so" moment.</p>
-                </div>
-
-                <!-- Feature 3 -->
-                <div class="glass-effect rounded-xl p-8 border border-red-dark/20 shadow-xl shadow-red-primary/5 hover:shadow-red-primary/10 transition group">
-                    <div class="w-12 h-12 bg-gradient-to-br from-red-light to-red-bright rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition">
-                        <i class="fas fa-user-minus text-white text-xl"></i>
+                    <div class="bg-muted p-4 rounded-lg border border-border">
+                        <p class="text-xs text-muted-foreground mb-1">Following</p>
+                        <div class="flex justify-between items-center">
+                            <p class="text-xl font-bold">182</p>
+                            <p class="text-primary text-xs flex items-center gap-1">
+                                <i class="fas fa-arrow-down"></i> 3
+                            </p>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2 text-white">Catch Their Unfollowers 👀</h3>
-                    <p class="text-gray-400">See exactly who unfollowed your bestie (or enemy). Perfect for drama or just checking who's loyal.</p>
-                </div>
-
-                <!-- Feature 4 -->
-                <div class="glass-effect rounded-xl p-8 border border-red-dark/20 shadow-xl shadow-red-primary/5 hover:shadow-red-primary/10 transition group">
-                    <div class="w-12 h-12 bg-gradient-to-br from-red-bright to-red-light rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition">
-                        <i class="fas fa-history text-white text-xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2 text-white">Timeline Stalking 🕰️</h3>
-                    <p class="text-gray-400">Track anyone's account over time with timestamps. See if they're buying followers or actually going viral.</p>
-                </div>
-
-                <!-- Feature 5 -->
-                <div class="glass-effect rounded-xl p-8 border border-red-dark/20 shadow-xl shadow-red-primary/5 hover:shadow-red-primary/10 transition group">
-                    <div class="w-12 h-12 bg-gradient-to-br from-red-light to-red-primary rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition">
-                        <i class="fas fa-users text-white text-xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2 text-white">Multiple Targets 💯</h3>
-                    <p class="text-gray-400">Stalk your crush, your ex, that girl from chem class, and your fave celebs all at once. We don't judge.</p>
-                </div>
-
-                <!-- Feature 6 -->
-                <div class="glass-effect rounded-xl p-8 border border-red-dark/20 shadow-xl shadow-red-primary/5 hover:shadow-red-primary/10 transition group">
-                    <div class="w-12 h-12 bg-gradient-to-br from-red-primary to-red-dark rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition">
-                        <i class="fas fa-palette text-white text-xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2 text-white">Aesthetic AF ✨</h3>
-                    <p class="text-gray-400">UI that's cleaner than your FYP. Color-coded stats that actually make sense. Stalking has never looked this good.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- How It Works Section -->
-    <section id="how-it-works" class="py-16 bg-black relative">
-        <!-- Radial gradient -->
-        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-red-primary/10 via-transparent to-transparent opacity-20"></div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-white">Stalk Like A Pro</h2>
-                <p class="mt-4 text-xl text-gray-400 max-w-3xl mx-auto">It's so easy even your technologically challenged friends could do it:</p>
+    <!-- Features Section -->
+    <section id="features" class="py-24 relative scroll-mt-20">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <div class="max-w-2xl mx-auto text-center mb-16">
+                <div class="shadcn-badge mx-auto mb-4">CAPABILITIES</div>
+                <h2 class="text-3xl font-bold mb-5 tracking-tight">✨ Features That Slap ✨</h2>
+                <p class="text-muted-foreground text-lg">Powerful tools to keep you in the loop on all your favorite profiles</p>
             </div>
-
+            
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Step 1 -->
-                <div class="relative">
-                    <div class="glass-effect rounded-xl p-8 border border-red-dark/20 shadow-xl shadow-red-primary/10 h-full">
-                        <div class="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-br from-red-dark to-red-primary rounded-full flex items-center justify-center text-white font-bold text-xl">1</div>
-                        <h3 class="text-xl font-semibold mb-4 mt-2 text-white">Find Your Target 🎯</h3>
-                        <p class="text-gray-400">Hit up any Insta profile you want to stalk - your crush, your ex, that person who posts cringe. We got you.</p>
-                        
-                        <div class="mt-6 bg-black-lighter rounded-lg p-4 border border-red-dark/20">
-                            <div class="flex items-center mb-3">
-                                <div class="w-8 h-8 rounded-full bg-gradient-to-r from-red-dark to-red-primary"></div>
-                                <div class="ml-2 text-white font-semibold">instagram.com/arianagrande</div>
+                <div class="shadcn-card">
+                    <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                        <i class="fas fa-lock text-primary"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Zero Gatekeeping</h3>
+                    <p class="text-muted-foreground text-sm">Works on any profile you can view (public or private that you follow)</p>
+                </div>
+                
+                <div class="shadcn-card">
+                    <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                        <i class="fas fa-save text-primary"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Receipts On Lock</h3>
+                    <p class="text-muted-foreground text-sm">Save follower/following counts with the "Snatch User Stats 📥" button</p>
+                </div>
+                
+                <div class="shadcn-card">
+                    <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                        <i class="fas fa-user-minus text-primary"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Catch The Changes</h3>
+                    <p class="text-muted-foreground text-sm">See EXACTLY how many followers someone gained or lost since last check</p>
+                </div>
+                
+                <div class="shadcn-card">
+                    <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                        <i class="fas fa-history text-primary"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Timeline Tea</h3>
+                    <p class="text-muted-foreground text-sm">Track changes with timestamps so you know when it happened</p>
+                </div>
+                
+                <div class="shadcn-card">
+                    <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                        <i class="fas fa-users text-primary"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Track Everyone</h3>
+                    <p class="text-muted-foreground text-sm">Keep tabs on unlimited profiles (your entire FYP if you want)</p>
+                </div>
+                
+                <div class="shadcn-card">
+                    <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                        <i class="fas fa-palette text-primary"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Aesthetic AF</h3>
+                    <p class="text-muted-foreground text-sm">Color-coded stats that make sense (green = W, red = L)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How To Use Section -->
+    <section id="how-to-use" class="py-24 scroll-mt-20">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <div class="max-w-2xl mx-auto text-center mb-16">
+                <div class="shadcn-badge mx-auto mb-4">TUTORIAL</div>
+                <h2 class="text-3xl font-bold mb-5 tracking-tight">🕵️‍♀️ How To Use It</h2>
+                <p class="text-muted-foreground text-lg">So Simple It's Giving</p>
+            </div>
+            
+            <div class="max-w-5xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="shadcn-card relative">
+                        <div class="absolute -top-3 -left-3 w-8 h-8 bg-primary rounded-full flex items-center justify-center font-bold text-sm">1</div>
+                        <h3 class="text-lg font-semibold mb-3 mt-2">Find Your Target</h3>
+                        <p class="text-muted-foreground text-sm mb-4">Go to ANY Instagram profile (your situationship, your ex, that celebrity you're obsessed with...)</p>
+                        <div class="bg-muted p-3 rounded-lg border border-border">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 rounded-full bg-card flex items-center justify-center">
+                                    <i class="fas fa-user text-muted-foreground text-xs"></i>
+                                </div>
+                                <div class="ml-3 text-sm">instagram.com/arianagrande</div>
                             </div>
-                            <div class="bg-black-light h-4 w-2/3 rounded mb-2"></div>
-                            <div class="bg-black-light h-4 w-1/2 rounded"></div>
                         </div>
                     </div>
-                </div>
-
-                <!-- Step 2 -->
-                <div class="relative">
-                    <div class="glass-effect rounded-xl p-8 border border-red-dark/20 shadow-xl shadow-red-primary/10 h-full">
-                        <div class="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-br from-red-primary to-red-light rounded-full flex items-center justify-center text-white font-bold text-xl">2</div>
-                        <h3 class="text-xl font-semibold mb-4 mt-2 text-white">Click That Button 👆</h3>
-                        <p class="text-gray-400">Tap the InstaYou icon faster than you'd swipe right on your TikTok crush. Hit "Stalk This Profile".</p>
-                        
-                        <div class="mt-6 bg-black-lighter rounded-lg p-4 border border-red-dark/20">
+                    
+                    <div class="shadcn-card relative">
+                        <div class="absolute -top-3 -left-3 w-8 h-8 bg-primary rounded-full flex items-center justify-center font-bold text-sm">2</div>
+                        <h3 class="text-lg font-semibold mb-3 mt-2">Collect The Data</h3>
+                        <p class="text-muted-foreground text-sm mb-4">Click the InstaYou icon in your browser toolbar and hit "Snatch User Stats 📥"</p>
+                        <div class="bg-muted p-3 rounded-lg border border-border">
                             <div class="flex justify-between items-center mb-3">
-                                <div class="text-white font-semibold">InstaYou</div>
-                                <img src="Extension/Public/icon.png" alt="InstaYou Logo" class="h-6 w-auto">
+                                <span class="text-sm">InstaYou</span>
+                                <img src="InstaYou/Public/icon.png" alt="InstaYou Icon" class="h-5">
                             </div>
-                            <div class="bg-red-primary rounded-md p-2 text-white text-center text-sm mb-2">
-                                Stalk This Profile
-                            </div>
-                            <div class="bg-black-light rounded-md p-2 text-white text-center text-sm">
-                                See Stalk History
-                            </div>
+                            <button class="w-full bg-primary hover:bg-primary-dark text-white py-1.5 rounded text-xs mb-2 transition-all duration-300">Snatch User Stats 📥</button>
+                            <button class="w-full bg-card text-white py-1.5 rounded text-xs border border-border hover:border-primary transition-all duration-300">Spot the Difference 👀</button>
                         </div>
                     </div>
-                </div>
-
-                <!-- Step 3 -->
-                <div class="relative">
-                    <div class="glass-effect rounded-xl p-8 border border-red-dark/20 shadow-xl shadow-red-primary/10 h-full">
-                        <div class="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-br from-red-light to-red-bright rounded-full flex items-center justify-center text-white font-bold text-xl">3</div>
-                        <h3 class="text-xl font-semibold mb-4 mt-2 text-white">Get All The Tea ☕</h3>
-                        <p class="text-gray-400">Come back later to see who they've unfollowed or who unfollowed them. All the juicy stats, no cap.</p>
-                        
-                        <div class="mt-6 bg-black-lighter rounded-lg p-4 border border-red-dark/20">
-                            <div class="text-white font-semibold mb-2">@arianagrande Stats:</div>
-                            <div class="flex justify-between mb-2">
-                                <span class="text-gray-400">New followers:</span>
-                                <span class="text-green-400">+15K W</span>
+                    
+                    <div class="shadcn-card relative">
+                        <div class="absolute -top-3 -left-3 w-8 h-8 bg-primary rounded-full flex items-center justify-center font-bold text-sm">3</div>
+                        <h3 class="text-lg font-semibold mb-3 mt-2">See The Changes Later</h3>
+                        <p class="text-muted-foreground text-sm mb-4">Come back later, visit the profile, and click "Spot the Difference 👀" to see what changed</p>
+                        <div class="bg-muted p-3 rounded-lg border border-border">
+                            <div class="mb-3 text-sm">@arianagrande Stats:</div>
+                            <div class="flex justify-between mb-2 text-xs">
+                                <span class="text-muted-foreground">New followers:</span>
+                                <span class="text-green-400 flex items-center gap-1">
+                                    <i class="fas fa-arrow-up text-[10px]"></i> 15K
+                                </span>
                             </div>
-                            <div class="flex justify-between">
-                                <span class="text-gray-400">Unfollowed:</span>
-                                <span class="text-red-400">-2 people 👀</span>
+                            <div class="flex justify-between text-xs">
+                                <span class="text-muted-foreground">Unfollowed:</span>
+                                <span class="text-primary flex items-center gap-1">
+                                    <i class="fas fa-arrow-down text-[10px]"></i> 2 people
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -366,77 +432,97 @@
     </section>
 
     <!-- Installation Section -->
-    <section id="install" class="py-16 bg-black relative overflow-hidden">
-        <!-- Gradient effect -->
-        <div class="absolute inset-0 bg-gradient-to-br from-red-dark/5 to-red-primary/5"></div>
-        <div class="absolute top-20 left-20 w-32 h-32 rounded-full bg-red-primary/10 blur-2xl"></div>
-        <div class="absolute bottom-10 right-10 w-48 h-48 rounded-full bg-red-light/10 blur-3xl"></div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-white">Get This ASAP</h2>
-                <p class="mt-4 text-xl text-gray-400 max-w-3xl mx-auto">It's giving easy installation vibes.</p>
+    <section id="install" class="py-24 scroll-mt-20">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <div class="max-w-2xl mx-auto text-center mb-16">
+                <div class="shadcn-badge mx-auto mb-4">SETUP</div>
+                <h2 class="text-3xl font-bold mb-5 tracking-tight">📱 Installation</h2>
+                <p class="text-muted-foreground text-lg">It's Giving Easy</p>
             </div>
+            
+            <div class="shadcn-card max-w-3xl mx-auto">
+                <div class="mb-8">
+                    <h3 class="text-lg font-semibold mb-4 flex items-center">
+                        <span class="w-6 h-6 bg-primary/20 rounded-full flex items-center justify-center mr-3 text-primary text-xs">1</span>
+                        Download from GitHub Releases (Easiest)
+                    </h3>
+                    <ol class="space-y-2 list-decimal list-inside text-muted-foreground text-sm ml-9">
+                        <li class="bg-muted p-2 rounded border border-border">Download from <a href="https://github.com/ajmalrazaqbhatti/InstaYou/releases" class="text-primary hover:underline">GitHub Releases</a></li>
+                        <li class="bg-muted p-2 rounded border border-border">Unzip the file to a folder on your computer</li>
+                        <li class="bg-muted p-2 rounded border border-border">Open Chrome and go to <code class="bg-card px-1.5 py-0.5 rounded text-xs">chrome://extensions/</code></li>
+                        <li class="bg-muted p-2 rounded border border-border">Turn on "Developer mode" (top right corner)</li>
+                        <li class="bg-muted p-2 rounded border border-border">Click "Load unpacked" and select the InstaYou folder</li>
+                    </ol>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 flex items-center">
+                        <span class="w-6 h-6 bg-primary/20 rounded-full flex items-center justify-center mr-3 text-primary text-xs">2</span>
+                        DIY Setup (For The Tech Girlies & Bros)
+                    </h3>
+                    <ol class="space-y-2 list-decimal list-inside text-muted-foreground text-sm ml-9">
+                        <li class="bg-muted p-2 rounded border border-border">Clone the repo:
+                            <code class="block bg-card mt-2 p-2 rounded text-xs font-mono">git clone https://github.com/ajmalrazaqbhatti/InstaYou.git</code>
+                        </li>
+                        <li class="bg-muted p-2 rounded border border-border">Follow steps 3-5 from Method 1</li>
+                    </ol>
+                </div>
+                
+                <div class="mt-8 text-center">
+                    <a href="https://github.com/ajmalrazaqbhatti/InstaYou/releases" 
+                       class="shadcn-button-primary px-6 py-2">
+                        Download Now 📥
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <div class="glass-effect rounded-3xl p-8 md:p-12 border border-red-dark/20 shadow-xl shadow-red-primary/10">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                    <div>
-                        <h3 class="text-2xl font-semibold mb-6 text-white">Method 1: DIY Setup</h3>
-                        <ol class="space-y-4 list-decimal list-inside text-gray-300">
-                            <li class="p-2 pl-4 bg-black-lighter rounded-lg border border-red-dark/20">Grab the ZIP from the <a href="https://github.com/ajmalrazaqbhatti/InstaYou/releases" class="text-red-primary underline hover:text-red-light">latest drop</a> 💾</li>
-                            <li class="p-2 pl-4 bg-black-lighter rounded-lg border border-red-dark/20">Extract that bad boy</li>
-                            <li class="p-2 pl-4 bg-black-lighter rounded-lg border border-red-dark/20">Hit up <code class="bg-black px-1 py-0.5 rounded">chrome://extensions/</code> in Chrome</li>
-                            <li class="p-2 pl-4 bg-black-lighter rounded-lg border border-red-dark/20">Turn on <strong>Developer mode</strong> like you know what you're doing 👨‍💻</li>
-                            <li class="p-2 pl-4 bg-black-lighter rounded-lg border border-red-dark/20">Click <strong>Load unpacked</strong> and find the <code>Extension</code> folder</li>
+    <!-- Troubleshooting Section from README -->
+    <section class="py-20 bg-muted/5">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <div class="max-w-3xl mx-auto">
+                <div class="shadcn-card">
+                    <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+                        <i class="fas fa-wrench text-primary"></i>
+                        Troubleshooting When It's Acting Sus
+                    </h2>
+                    <ul class="space-y-3 text-muted-foreground">
+                        <li class="bg-muted p-3 rounded-lg border border-border flex items-start gap-3">
+                            <i class="fas fa-exclamation-triangle text-primary mt-1"></i>
+                            <div>
+                                <strong>Stats Not Showing?</strong> Refresh the page and try again
+                            </div>
+                        </li>
+                        <li class="bg-muted p-3 rounded-lg border border-border flex items-start gap-3">
+                            <i class="fas fa-exclamation-triangle text-primary mt-1"></i>
+                            <div>
+                                <strong>Profile Not Loading?</strong> Make sure you're actually on a profile page
+                            </div>
+                        </li>
+                        <li class="bg-muted p-3 rounded-lg border border-border flex items-start gap-3">
+                            <i class="fas fa-exclamation-triangle text-primary mt-1"></i>
+                            <div>
+                                <strong>Numbers Look Wrong?</strong> Instagram sometimes shows rounded numbers (1.2M instead of 1,234,567) but we convert them properly
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <div class="mt-6 pt-6 border-t border-border">
+                        <h3 class="text-lg font-semibold mb-3">Clearing Your Data</h3>
+                        <p class="text-muted-foreground mb-4">If you want to delete your stored data:</p>
+                        <ol class="space-y-2 text-sm text-muted-foreground list-decimal ml-5">
+                            <li>Click the <strong>InstaYou</strong> icon</li>
+                            <li>Click <strong>"Spot the Difference 👀"</strong></li>
+                            <li>Click the <strong>"Yeet the List 🗑️"</strong> button to delete all stored profiles</li>
+                            <li>Or delete individual profiles with the delete button next to each name</li>
                         </ol>
-
-                        <h3 class="text-2xl font-semibold mt-12 mb-6 text-white">Method 2: One-Click (For Lazy Besties)</h3>
-                        <div class="p-4 bg-black-lighter rounded-lg border border-red-dark/20">
-                            <p class="text-gray-400 italic">On the Chrome Web Store soon! No cap! ⏰</p>
-                        </div>
-
-                        <div class="mt-8">
-                            <a href="https://github.com/ajmalrazaqbhatti/InstaYou/releases" class="btn-shine inline-flex items-center px-8 py-3 bg-gradient-to-r from-red-dark to-red-primary rounded-lg text-white font-medium shadow-lg shadow-red-primary/20 hover:shadow-xl hover:shadow-red-primary/40 transform transition hover:-translate-y-0.5">
-                                <i class="fas fa-download mr-2"></i>
-                                Download Now
-                            </a>
-                        </div>
                     </div>
                     
-                    <div class="hidden md:block">
-                        <div class="glass-effect p-6 rounded-xl border border-red-dark/20">
-                            <div class="flex items-center mb-6">
-                                <div class="w-12 h-12 bg-black rounded-lg flex items-center justify-center border border-red-dark/30">
-                                    <img src="Extension/Public/icon.png" alt="InstaYou Logo" class="h-8 w-auto">
-                                </div>
-                                <div class="ml-4">
-                                    <div class="text-lg font-semibold text-white">InstaYou</div>
-                                    <div class="text-sm text-gray-400">Elite Stalking Tool</div>
-                                </div>
-                            </div>
-                            
-                            <div class="bg-black-lighter p-4 rounded-lg mb-4">
-                                <div class="flex items-center mb-2">
-                                    <div class="w-6 h-6 rounded-full bg-black-light"></div>
-                                    <div class="ml-2 text-white text-sm">zendaya</div>
-                                </div>
-                                <div class="flex justify-between text-xs">
-                                    <span class="text-gray-400">Followers: 184.2M</span>
-                                    <span class="text-green-400">+124K</span>
-                                </div>
-                            </div>
-                            
-                            <div class="bg-black-lighter p-4 rounded-lg">
-                                <div class="flex items-center mb-2">
-                                    <div class="w-6 h-6 rounded-full bg-black-light"></div>
-                                    <div class="ml-2 text-white text-sm">billieeilish</div>
-                                </div>
-                                <div class="flex justify-between text-xs">
-                                    <span class="text-gray-400">Following: 0</span>
-                                    <span class="text-red-400">-3</span>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="bg-card mt-6 p-4 rounded-lg border border-primary/10">
+                        <p class="text-xs text-muted-foreground italic">
+                            <strong>Disclaimer:</strong> This extension is <strong>NOT</strong> affiliated with Instagram or Meta. Use responsibly and don't be weird about it (or do, we can't stop you, but don't be creepy). For <strong>educational purposes only</strong>... yeah, <em>"educational"</em> 😏
+                        </p>
                     </div>
                 </div>
             </div>
@@ -444,116 +530,65 @@
     </section>
 
     <!-- FAQ Section -->
-    <section id="faq" class="py-16 bg-black relative">
-        <!-- Decorative elements -->
-        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-dark via-red-primary to-red-light"></div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-white">The Awkward Questions</h2>
-                <p class="mt-4 text-xl text-gray-400 max-w-3xl mx-auto">Things you're too afraid to ask but we'll answer anyway.</p>
+    <section id="faq" class="py-24 scroll-mt-20">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <div class="max-w-2xl mx-auto text-center mb-16">
+                <div class="shadcn-badge mx-auto mb-4">QUESTIONS</div>
+                <h2 class="text-3xl font-bold mb-5 tracking-tight">FAQ</h2>
+                <p class="text-muted-foreground text-lg">Because We Know You're Wondering</p>
             </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- FAQ Item 1 -->
-                <div class="glass-effect rounded-xl p-6 border border-red-dark/20 shadow-md hover:shadow-red-primary/5 transition">
-                    <h3 class="text-xl font-semibold mb-3 text-white">Can I stalk private profiles? 🔒</h3>
-                    <p class="text-gray-400">Yasss! If you can already see their profile (like if you follow them), InstaYou can track their stats too. We're sneaky but not hackers.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                <div class="shadcn-card">
+                    <h3 class="text-lg font-semibold mb-2">Will they know I'm stalking them?</h3>
+                    <p class="text-muted-foreground text-sm">Absolutely NOT. This is stealth mode. We just read the numbers that are already on the page.</p>
                 </div>
-
-                <!-- FAQ Item 2 -->
-                <div class="glass-effect rounded-xl p-6 border border-red-dark/20 shadow-md hover:shadow-red-primary/5 transition">
-                    <h3 class="text-xl font-semibold mb-3 text-white">Can I see WHO exactly they unfollowed? 🧐</h3>
-                    <p class="text-gray-400">We can tell you how many people they unfollowed or who unfollowed them, but can't name names (yet). Instagram doesn't let anyone do that without getting blocked.</p>
+                
+                <div class="shadcn-card">
+                    <h3 class="text-lg font-semibold mb-2">Can I see EXACTLY who unfollowed them?</h3>
+                    <p class="text-muted-foreground text-sm">Not yet bestie. Instagram's API doesn't allow that without getting blocked. But we show you the counts.</p>
                 </div>
-
-                <!-- FAQ Item 3 -->
-                <div class="glass-effect rounded-xl p-6 border border-red-dark/20 shadow-md hover:shadow-red-primary/5 transition">
-                    <h3 class="text-xl font-semibold mb-3 text-white">Is stalking with this app legal? 👮</h3>
-                    <p class="text-gray-400">It's all above board! We only track public stats anyone can see. Your stalking data stays in your browser like a secret in the girl's group chat.</p>
+                
+                <div class="shadcn-card">
+                    <h3 class="text-lg font-semibold mb-2">Why isn't it working for some accounts?</h3>
+                    <p class="text-muted-foreground text-sm">Make sure you're on their main profile page (not their story or post). Refresh if needed.</p>
                 </div>
-
-                <!-- FAQ Item 4 -->
-                <div class="glass-effect rounded-xl p-6 border border-red-dark/20 shadow-md hover:shadow-red-primary/5 transition">
-                    <h3 class="text-xl font-semibold mb-3 text-white">Why isn't it working on some profiles? 😭</h3>
-                    <p class="text-gray-400">Make sure you're actually on a profile page - not scrolling through stories or reels. Refresh the page if needed. Some private profiles you can't see won't work (duh).</p>
-                </div>
-
-                <!-- FAQ Item 5 -->
-                <div class="glass-effect rounded-xl p-6 border border-red-dark/20 shadow-md hover:shadow-red-primary/5 transition">
-                    <h3 class="text-xl font-semibold mb-3 text-white">How many people can I stalk? 👀</h3>
-                    <p class="text-gray-400">As many as your little heart desires! Stalk your crushes, your exes, your fave celebs, that person from math class who got hot over summer break... no limits!</p>
-                </div>
-
-                <!-- FAQ Item 6 -->
-                <div class="glass-effect rounded-xl p-6 border border-red-dark/20 shadow-md hover:shadow-red-primary/5 transition">
-                    <h3 class="text-xl font-semibold mb-3 text-white">Will they know I'm stalking them? 👀</h3>
-                    <p class="text-gray-400">Nope! This is stealth mode stalking. We don't log into their account or do anything sus. We just read the numbers that are already there on screen.</p>
+                
+                <div class="shadcn-card">
+                    <h3 class="text-lg font-semibold mb-2">Is this legal?</h3>
+                    <p class="text-muted-foreground text-sm">It's literally just looking at numbers that are already public on Instagram. We're not hacking anything, just being organized stalkers.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="py-20 bg-gradient-to-br from-red-dark to-red-primary relative overflow-hidden">
-        <!-- Decorative elements -->
-        <div class="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2256%22%20height%3D%2256%22%20viewBox%3D%220%200%2056%2056%22%3E%3Cpath%20fill%3D%22%23ffffff10%22%20d%3D%22M28%204.01c-13.25%200-23.99%2010.74-23.99%2023.99S14.75%2051.99%2028%2051.99%2051.99%2041.25%2051.99%2028%2041.25%204.01%2028%204.01zM28%2046c-9.94%200-18-8.06-18-18s8.06-18%2018-18%2018%208.06%2018%2018-8.06%2018-18%2018z%22%2F%3E%3C%2Fsvg%3E')] opacity-10"></div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">Ready To Become The Ultimate Stalker? 🕵️‍♀️</h2>
-            <p class="text-xl text-white/90 max-w-3xl mx-auto mb-10">Get all the tea on who everyone's following (and unfollowing). Your FBI agent could never.</p>
-            <a href="https://github.com/ajmalrazaqbhatti/InstaYou/releases" class="btn-shine inline-flex items-center px-8 py-4 bg-white text-red-primary rounded-lg font-medium shadow-lg hover:shadow-xl transform transition hover:-translate-y-0.5">
-                <i class="fas fa-arrow-alt-circle-down mr-2"></i>
-                Start Stalking Now
+    <section class="py-24 relative">
+        <div class="gradient-glow top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+        <div class="container mx-auto px-6 text-center relative z-10 max-w-3xl">
+            <div class="shadcn-badge mx-auto mb-4">GET STARTED</div>
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 tracking-tight">Ready To Become The <span class="text-primary">Ultimate Stalker</span>?</h2>
+            <p class="text-muted-foreground mb-10 max-w-2xl mx-auto text-lg">Get all the tea on who everyone's following (and unfollowing). Your FBI agent could never.</p>
+            <a href="https://github.com/ajmalrazaqbhatti/InstaYou/releases" 
+               class="shadcn-button-primary px-8 py-4 text-lg flex items-center justify-center mx-auto max-w-xs">
+                <i class="fas fa-binoculars mr-2"></i> Start Stalking Now
             </a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-black text-gray-400 py-12 border-t border-red-dark/20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-center md:items-start">
-                <div class="mb-8 md:mb-0">
-                    <div class="flex items-center">
-                        <img src="Extension/Public/logo.png" alt="InstaYou Logo" class="h-8 w-auto mr-2">
-                    </div>
-                    <p class="mt-4 max-w-xs">The stalking tool that gives you all the tea on everyone's Instagram stats.</p>
+    <footer class="py-10 border-t border-border">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center justify-center mb-6 md:mb-0">
+                    <img src="InstaYou/Public/logo.png" alt="InstaYou Logo" class="h-8 mr-3">
                 </div>
-                
-                <!-- User info in footer -->
-                <div class="mb-8 md:mb-0">
-                    <div class="glass-effect px-4 py-3 rounded-lg">
-                        <div class="text-sm font-semibold text-white mb-1">Currently Logged In:</div>
-                        <div class="flex items-center">
-                            <div class="w-6 h-6 rounded-full bg-gradient-to-r from-red-dark to-red-primary flex items-center justify-center text-white text-xs">
-                                <i class="fas fa-user"></i>
-                            </div>
-                            <span class="ml-2 text-white">@ajmalrazaqbhatti</span>
-                        </div>
-                        <div class="text-xs text-gray-500 mt-1">Last active: 2025-03-22 02:56:58</div>
-                    </div>
+                <div class="text-muted-foreground text-sm">
+                    Crafted By <a href="/">Ajmal Razaq Bhatti</a> 
                 </div>
-                
-            </div>
-            
-            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p>© 2025 InstaYou. Created by Ajmal Razaq Bhatti. All rights reserved.</p>
-                <p class="mt-4 md:mt-0">MIT License - Stalk responsibly, bestie 💅</p>
+               
             </div>
         </div>
     </footer>
-
-    <script>
-        // Basic scroll functionality for smooth scrolling to sections
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
 </body>
 </html>

@@ -1,5 +1,5 @@
-  body {
-        width: 300px;
+body {
+        width: 350px;
         background-color: black;
         height: 300px;
         font-family: Arial, sans-serif;
@@ -51,12 +51,10 @@
         margin-top: 10px;
         display: none;
         flex-direction: row;
-        gap: 10px;
         scrollbar-width: thin;
         scrollbar-color: #333 #333;
-        scrollbar-base-color: #333;
-        justify-content: space-between;
-        padding: 5px 8px;
+        padding: 8px 8px;
+        gap: 10px;
         align-items: start;
         border-radius: 19px;
         flex-wrap: wrap;
@@ -87,7 +85,6 @@
         justify-content: space-between;
         align-items: center;
         width: 100%;
-        margin-top: 5px;
       }
       .user-item > .delete-button {
         background: red;
@@ -132,5 +129,144 @@
     align-items: center;
     }
 
+/* New styles for stats card */
+      .stats-card {
+        width: 100%;
+        padding: 16px;
+        margin-top: 10px;
+      }
+      
+      .stats-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 16px;
+      }
+      
+      .user-info {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      
+      .user-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(255, 0, 0, 0.4);
+      }
+      
+      .user-avatar i {
+        color: #ff0000;
+      }
+      
+      .stats-icon {
+        color: #ff0000;
+      }
+      
+      .username {
+        font-weight: 500;
+        color: white;
+        margin: 0;
+      }
+      
+      .timestamp {
+        font-size: 12px;
+        color: #aaaaaa;
+        margin: 0;
+      }
+      
+      .stats-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 16px;
+      }
+      
+      .stats-box {
+        background-color: black;
+        padding: 16px;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 0, 0, 0.2);
+      }
+      
+      .stats-label {
+        font-size: 14px;
+        color: #aaaaaa;
+        margin: 0 0 8px 0;
+      }
+      
+      .stats-value-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      .stats-value {
+        font-size: 20px;
+        font-weight: 700;
+        color: white;
+        margin: 0;
+      }
+      
+      .stats-positive {
+        color: #4caf50;
+        font-size: 14px;
+        margin: 0;
+      }
+      
+      .stats-negative {
+        color: #f44336;
+        font-size: 14px;
+        margin: 0;
+      }
+      
+      .stats-neutral {
+        color: #ffc107;
+        font-size: 14px;
+        margin: 0;
+      }
+      
+      .stats-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 12px;
+        border-top: 1px solid rgba(255, 0, 0, 0.2);
+      }
+      
+      .stats-history-link {
+        font-size: 14px;
+        color: #ff0000;
+        cursor: pointer;
+      }
+      
+      .stats-update-btn {
+        background-color: #ff0000;
+        color: white;
+        border: none;
+        border-radius: 20px;
+        padding: 6px 12px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      
+      .stats-results {
+        flex-direction: column;
+        align-items: center;
+        max-width: 100%;
+      }
+      
+      /* Make sure the font awesome icons work */
+      @font-face {
+        font-family: 'FontAwesome';
+        src: url('chrome-extension://__MSG_@@extension_id__/Public/fontawesome.woff2') format('woff2');
+        font-weight: normal;
+        font-style: normal;
+      }
 
-   
+

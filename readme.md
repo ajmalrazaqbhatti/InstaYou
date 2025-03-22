@@ -2,35 +2,31 @@
 
 <img src="InstaYou/Public/logo.png" height="80px" alt="InstaYou Logo"/>
 
-## No Cap, Best Way to Track Your Crush's Followers FR FR 🔥
+## No Cap, This Is The Way To Track Instagram Stats FR FR 🔥
 
-**InstaYou** is a Chrome extension that lets you track who's following (and unfollowing) literally ANYONE on Instagram. Perfect for keeping tabs on your crush, your ex, your bestie who's always losing followers, or that person from math class who suddenly got famous. We see you, and we're here to help you see EVERYONE ELSE.
-
-
+**InstaYou** is a Chrome extension that lets you track who's following (and unfollowing) literally ANYONE on Instagram. Perfect for keeping tabs on your faves, your ex, your bestie who's always losing followers, or that person who suddenly got famous. We see you, and we're here to help you see EVERYONE ELSE.
 
 ## ✨ Features That Slap ✨
 
-- **No Gatekeeping** - Works on both private AND public profiles (if you can see it, you can track it)
-- **Receipts For Days** - Save follower/following counts with ONE click
-- **Catch The Ops** - See EXACTLY how many followers someone gained or lost since last check
-- **Timeline Tea** - Track changes with timestamps so you can PROVE they bought followers
-- **Stalk Everyone** - Keep tabs on unlimited profiles (your entire FYP if you want)
+- **Zero Gatekeeping** - Works on any profile you can view (public or private that you follow)
+- **Receipts On Lock** - Save follower/following counts with the "Snatch User Stats 📥" button
+- **Catch The Changes** - See EXACTLY how many followers someone gained or lost since last check
+- **Timeline Tea** - Track changes with timestamps so you know when it happened
+- **Track Everyone** - Keep tabs on unlimited profiles (your entire FYP if you want)
 - **Aesthetic AF** - Color-coded stats that make sense (green = W, red = L)
 
-
-
-## 📱 Installation (So Easy Even Your Grandma Could Do It)
+## 📱 Installation (It's Giving Easy)
 
 ### Method 1: Download from GitHub Releases (Easiest)
-1. Go to **GitHub Releases**
-2. Download the latest release `.zip` file
+1. Go to the [GitHub Releases](https://github.com/ajmalrazaqbhatti/InstaYou/releases) page
+2. Download the latest `instaYou.zip` file
 3. Unzip the file to a folder on your computer
 4. Open Chrome and go to `chrome://extensions/`
 5. Turn on **"Developer mode"** (top right corner)
-6. Click **"Load unpacked"** and select the unzipped folder
+6. Click **"Load unpacked"** and select the unzipped `InstaYou` folder
 7. Let the stalking begin! 🕵️‍♀️
 
-### Method 2: DIY Setup (For The Tech Besties)
+### Method 2: DIY Setup (For The Tech Girlies & Bros)
 1. Clone this repo:  
    ```sh
    git clone https://github.com/ajmalrazaqbhatti/InstaYou.git
@@ -38,73 +34,75 @@
 2. Open Chrome and go to `chrome://extensions/`
 3. Turn on **"Developer mode"** (top right corner)
 4. Click **"Load unpacked"** and select the `InstaYou` folder
-5. You're in! Time to get nosy 👃
+5. You're in! Time to get all the tea 🍵
 
-### Method 3: For The Lazy Besties
-Coming to Chrome Web Store soon! We're cooking! 👨‍🍳
-
-
-
-## 🕵️‍♀️ How To Be A Professional Stalker
+## 🕵️‍♀️ How To Use It (So Simple It's Giving)
 
 ### Step 1: Find Your Target
 - Go to ANY Instagram profile (your situationship, your ex, that celebrity you're obsessed with...)
 - Make sure you're on their main page (`instagram.com/username`)
 
-### Step 2: Collect The Tea
+### Step 2: Collect The Data
 - Click the **InstaYou** icon in your browser toolbar
 - Hit **"Snatch User Stats 📥"** to save their current follower/following counts
-- Your stalking database is GROWING 📈
+- Watch your stalking database grow 📈
 
-### Step 3: Spot The Drama Later
+### Step 3: See The Changes Later
 - Come back after a day, week, or whenever you're feeling nosy
 - Visit the same profile and click the **InstaYou** icon again
 - Hit **"Spot the Difference 👀"**
 - Select their username from your list
 - **BOOM!** See exactly how many followers they gained/lost
-- Screenshots = immediate group chat material
+- This is immediate group chat material
 
+## 🔍 What's In The Box
 
+Here's what's in the extension folder:
+- `manifest.json` - The extension configuration
+- `popup.html` - The main popup you see when clicking the icon
+- `popup.js` - All the stalking magic happens here
+- `popup.css` - Making it look cute and aesthetic
+- `Public/` - Contains icons and images
 
-## 💯 Why This Extension Is Giving
+## 💯 Why This Extension Is Bussin
 
-- **Easy AF** - Just two clicks to start stalking
-- **Lowkey** - No one will ever know you're tracking them
+- **Easy AF** - Just two clicks to start tracking
+- **Lowkey** - No one will ever know you're watching their stats
 - **No Login Needed** - We don't need your password (that's sus)
 - **Zero Waste** - All data stays on YOUR computer
-- **Touch Grass Option** - Delete profiles you're over with one click
-
-
+- **Clean Up Option** - "Yeet the List 🗑️" button to delete profiles you're over
 
 ## 🤔 FAQ (Because We Know You're Wondering)
 
 > **"Will they know I'm stalking them?"**  
-> Absolutely NOT. This is stealth mode. Nobody knows except you and the FBI agent watching your screen.
+> Absolutely NOT. This is stealth mode. We just read the numbers that are already on the page.
 
 > **"Can I see EXACTLY who unfollowed them?"**  
 > Not yet bestie. Instagram's API doesn't allow that without getting blocked. But we show you the counts so you can do the math.
 
 > **"Why isn't it working for some accounts?"**  
-> Make sure you're on their main profile page (not their story or post). Refresh if needed. If the tea still won't spill, they might have a weird profile setup.
+> Make sure you're on their main profile page (not their story or post). Refresh if needed.
 
 > **"Is this legal?"**  
 > It's literally just looking at numbers that are already public on Instagram. We're not hacking anything, just being organized stalkers.
 
-
-
-## 🚫 Troubleshooting For When It's Acting Sus
+## 🚫 Troubleshooting When It's Acting Sus
 
 - **Stats Not Showing?** Refresh the page and try again
 - **Profile Not Loading?** Make sure you're actually on a profile page
 - **Numbers Look Wrong?** Instagram sometimes shows rounded numbers (1.2M instead of 1,234,567) but we convert them properly
 
+## 🗑️ Clearing Your Data
 
+If you want to delete your stored data:
+- Click the **InstaYou** icon
+- Click **"Spot the Difference 👀"**
+- Click the **"Yeet the List 🗑️"** button to delete all stored profiles
+- Or delete individual profiles with the delete button next to each name
 
 ## 👑 Created By
 
-**Ajmal Razaq Bhatti** (aka the CEO of helping you stalk your ex)
-
-
+**Ajmal Razaq Bhatti** - Giving you the tools to upgrade your stalking skills 🚀
 
 ## Disclaimer
 This extension is **NOT** affiliated with Instagram or Meta. Use responsibly and don't be weird about it (or do, we can't stop you, but don't be creepy). For **educational purposes only**... yeah, *"educational"* 😏
